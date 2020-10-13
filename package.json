@@ -1,3 +1,6 @@
+
+
+
 {
   "name": "Fwitch",
   "private": true,
@@ -18,6 +21,10 @@
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.1"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "description": "This README would normally document whatever steps are necessary to get the\r application up and running.",
   "version": "1.0.0",
   "main": "webpack.config.js",
@@ -27,7 +34,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch --mode=development"
+    "webpack": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",

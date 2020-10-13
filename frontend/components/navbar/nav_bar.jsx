@@ -1,36 +1,24 @@
 import React from 'react';
-import SignUpContainer from '../session/signup_container';
-import Modal from 'react-bootstrap/Modal';
+import MyModal from '../login_module/module';
 
 
 
 class NavBar extends React.Component {
     constructor(props){
-
         super(props)
         this.state = {
           showLogin: false,
           showSignup: false
         };
-
-        // this.showForm = this.showForm.bind(this)
+        this.showForm = this.showForm.bind(this)
     }
 
-    // showForm(type) {
-    //     event.preventDefault();
-    //     this.setState({ [type]: !this.state[type] })     
-    // }
+    showForm(type) {
+        event.preventDefault();
+        this.setState({ [type]: !this.state[type] })     
+    }
 
     render() {
-        let loginForm;
-        let signUpForm;
-
-        // if(this.state.showLogin){
-        //     loginForm = 'Login Form Goes Here';
-        // }
-        // if(this.state.showSignup){
-        //     signUpForm = <SignUpContainer />;
-        // }
 
         const display = this.props.currentUser ? (
             <div>
@@ -39,19 +27,15 @@ class NavBar extends React.Component {
             </div>
         ) : (
             <>
-                <button className="login-btn" onClick={this.showLogin} >Log In</button>
-                <button className="signup-btn" onClick={this.showSignUp} >Sign Up</button>
+                <button className="login-btn" onClick={() => this.showForm('showLogin')} >Log In</button>
+                <button className="signup-btn" onClick={() => this.showForm('showSignup')} >Sign Up</button>
             </>
         )
 
         return(
             <nav>
-                <Modal>
-
-                </Modal>
+                <MyModal state={this.state}/>
                 {display}
-                {loginForm}
-                {signUpForm}
             </nav>
         ) 
     }   
