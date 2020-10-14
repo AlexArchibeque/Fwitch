@@ -10,7 +10,7 @@ import Signup from './signup';
 
 const mDTP = dispatch => {
     return ({
-        createNewUser: formUser => dispatch(createNewUser(formUser))
+        createNewUser: formUser => dispatch(createNewUser(formUser)),
     })
 }
 

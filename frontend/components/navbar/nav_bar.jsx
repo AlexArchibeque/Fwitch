@@ -1,7 +1,11 @@
 import React from 'react';
-// import MyModalContainer from '../login_module/modal_container';
-import Modal from 'react-bootstrap/Modal';
+
+
+// import LoginModal from '../login_modal/modal'
+
 import SignUpContainer from '../session/signup_container';
+import LoginContainer from '../session/login_container'; 
+
 
 
 
@@ -9,40 +13,43 @@ class NavBar extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-          showLogin: false,
-          showSignup: false,
           login: '',
           signup: '',
           show: false
         };
 
         this.showForm = this.showForm.bind(this)
-        this.handleTabs = this.handleTabs.bind(this)
         this.handleReset = this.handleReset.bind(this)
+        this.handleTabs = this.handleTabs.bind(this)
     }
 
     showForm(type) {
-        // event.preventDefault();
-        this.setState({ [type]: !this.state[type], show:true })     
+        if(type === 'showLogin'){
+            this.setState({ login: <LoginContainer handleReset={this.handleReset} />, show:true })
+        }else if (type === 'showSignup'){
+            this.setState({ signup: <SignUpContainer handleReset={this.handleReset}/> , show: true})
+        }
+    }
+
+    handleReset() {
+        this.setState({show:false, signup: '', login: ''})
     }
 
     handleTabs(type) {
         if(type === 'login') {
             this.setState({
-            login: 'Login Component',
+            login: <LoginContainer handleReset={this.handleReset} />,
             signup: '',
             })
         }else{
             this.setState({
             login: '',
-            signup: <SignUpContainer />,
+            signup: <SignUpContainer handleReset={this.handleReset}/>,
             })
         }
     }
 
-    handleReset() {
-        this.setState({signup: '', login: '', show:false})
-    }
+
 
     render() {
 
@@ -57,32 +64,31 @@ class NavBar extends React.Component {
                 <button className="signup-btn" onClick={() => this.showForm('showSignup')} >Sign Up</button>
             </>
         )
-
-
-        return(
-            
+         
+        if(!this.state.show ){
+            return(
+                <div>
+                    {display}
+                </div>
+            )
+        }
+        return(   
             <div> 
-                {display}
-
-                <Modal 
-                show={this.state.show}
-                onHide={this.handleReset}
-                centered
-                >
-                    <Modal.Header>
-                        <Modal.Title><h2> Welcome to Fwitch! </h2></Modal.Title>
+                {display}            
+                <div className="modal-screen"
+                    onClick={this.handleReset}
+                    >
+                    <div className="modal-content"
+                        onClick={e=> e.stopPropagation() 
+                        }>
+                        Welcome to Fwitch!
                         <a onClick={() => this.handleTabs('login')}>Log In</a>
                         <a onClick={() => this.handleTabs('signup')}>Sign Up</a>
-                    </Modal.Header>
-                    <Modal.Body>
                         {this.state.login}
                         {this.state.signup}
-                    </Modal.Body>
-                    <Modal.Footer>
-                        This Is the Footer
                         <button onClick={this.handleReset}>Close</button>
-                    </Modal.Footer>
-                </Modal>
+                    </div>
+                </div>
             </div>
         ) 
     }   
