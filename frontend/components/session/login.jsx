@@ -16,7 +16,6 @@ class Login extends React.Component {
         e.preventDefault()
         this.props.login(this.state)
             .then(() => this.props.handleReset())
-        debugger
     }
 
     handleInput(type) {
@@ -28,8 +27,8 @@ class Login extends React.Component {
     render(){
 
         return(
-            <div>
-                <form>
+            <>
+                <form className="login-form">
 
                 <label>Username
                     <input type="text" 
@@ -43,9 +42,11 @@ class Login extends React.Component {
                     onChange={this.handleInput('password')}/>
                 </label>
 
-                <button onClick={this.handleSubmit}>Login</button>
+                
+                <button className="form-submit-button" onClick={this.handleSubmit}>Login</button>
+                
                 </form>
-            </div>
+            </>
         )
     }
 }

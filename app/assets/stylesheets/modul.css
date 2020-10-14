@@ -1,18 +1,91 @@
-.modal-content {
-    z-index: 999;
-    position: absolute;
-    background: white;
+/* Errors */
+.errors {
+    width: 90%;
+    background-color: #26262c;
+    border: solid red 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid black;
-    font-size: 20px;
-    width: 200px;
-    height: 120px;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    transform: translateX(-50%) translateY(-50%);
 }
 
+
+
+/* Buttons / Inputs*/
+.form-submit-button{
+    width: 90%;
+    background-color: #9147FF;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    outline: none;
+}
+
+.signup-form > label > input,
+.login-form > label > input {
+    height: 25px;
+    border-radius: 5px;
+}
+
+.signup-form > label > input:focus,
+.login-form > label > input:focus {
+    border: solid #9147FF 2px;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+/* Signup Form */
+
+
+.signup-form, .login-form{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 100%;
+}
+
+.signup-form > label, .login-form > label {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    padding-top: 20px;
+    width: 90%;
+    
+}
+
+.modal-header{
+    font-size: 30px;
+    margin:20px;
+    font-weight: 600;
+}
+
+/* Modals */
+.modal-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 999;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    font-size: 20px;
+    width: 420px;
+    min-height: 420px;
+    border-radius: 7px;
+
+    background: #18181b;
+
+
+}
 .modal-screen {
     position: absolute;
     z-index: 998;
@@ -22,3 +95,27 @@
     right: 0%;
     background: rgba(0, 0, 0, .3);
 }
+
+/* Login Tabs */
+
+.tab-selected {
+    border-bottom: 2px solid #9147FF;
+    color: #9147FF;
+    
+}
+
+.login-tabs {
+    display: flex;
+    align-items: left;
+    width: 90%;
+    border-bottom: 1px slategray solid;
+}
+
+.login-tabs > a {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-right: 15px;
+    cursor: pointer;
+}
+

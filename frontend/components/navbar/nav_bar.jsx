@@ -73,23 +73,42 @@ class NavBar extends React.Component {
             )
         }
         return(   
-            <div> 
+            <nav className="nav-bar"> 
                 {display}            
                 <div className="modal-screen"
                     onClick={this.handleReset}
                     >
-                    <div className="modal-content"
-                        onClick={e=> e.stopPropagation() 
-                        }>
-                        Welcome to Fwitch!
-                        <a onClick={() => this.handleTabs('login')}>Log In</a>
-                        <a onClick={() => this.handleTabs('signup')}>Sign Up</a>
-                        {this.state.login}
-                        {this.state.signup}
-                        <button onClick={this.handleReset}>Close</button>
+                    <div className="modal-wrapper">
+                        <div className="modal-content"
+                            onClick={e=> e.stopPropagation() 
+                            }>
+                            <button onClick={this.handleReset}>X</button>
+                            <h4 className="modal-header">{this.state.login ? "Log in to Fwitch" : "Join Fwitch Today"}</h4>
+                            <ul className="login-tabs">
+
+                            
+                            <a 
+                            className={this.state.login? "tab-selected": ""} 
+                            onClick={() => this.handleTabs('login')}>
+                                Log In
+                            </a>
+                        
+
+                            
+                            <a 
+                            className={this.state.signup? "tab-selected": ""}
+                            onClick={() => this.handleTabs('signup')}>
+                                Sign Up
+                            </a>
+
+                            </ul>
+                            <div className="errors">{this.props.errors ? this.props.errors: ''}</div>
+                            {this.state.login}
+                            {this.state.signup}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </nav>
         ) 
     }   
 }

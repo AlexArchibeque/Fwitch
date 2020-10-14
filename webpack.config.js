@@ -26,9 +26,6 @@ module.exports = {
     extensions: [".js", ".jsx", "*"]
   },
 
-  watch: true, 
-  watchOptions: {
-      poll:true,
-      aggregateTimeout:300
-  }
+  watch: process.env.NODE_ENV !== "production" ? true : false, 
+  watchOptions: { poll: process.env.NODE_ENV !== "production" ? true : false }
 };

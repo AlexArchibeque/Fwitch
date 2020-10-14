@@ -27,9 +27,8 @@ class Signup extends React.Component {
 
     render() {
         return(
-            <div>
-                <h2>Signup</h2>
-                <form>
+            <>
+                <form className="signup-form">
                     <label>Username
                     <input type="text" value={this.state.username} onChange={this.handleInput('username')}/>
                     </label>
@@ -39,10 +38,11 @@ class Signup extends React.Component {
                     <label>Password
                     <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
                     </label>
-
-                    <button onClick={this.handleSubmit}>Sign Up </button>
+                    
+                    <button className="form-submit-button" onClick={this.handleSubmit}>Sign Up </button>
+                    
                 </form>
-            </div>
+            </>
         )
     }
 }
