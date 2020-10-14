@@ -1,13 +1,27 @@
 /* Errors */
-.errors {
+.modal-error-container {
     width: 90%;
     background-color: #26262c;
-    border: solid red 2px;
+    border-left: 2px solid red;
+    border-right: 1px solid red;
+    border-bottom:1px solid red;
+    border-top: 1px solid red ;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
 }
 
+.modal-error-message-container {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.modal-error {
+    font-size: 18px;
+    font-weight: 500;
+}
 
 
 /* Buttons / Inputs*/
