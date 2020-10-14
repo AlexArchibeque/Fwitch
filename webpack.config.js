@@ -24,5 +24,11 @@ module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", "*"]
+  },
+
+  watch: true, 
+  watchOptions: {
+      poll:true,
+      aggregateTimeout:300
   }
 };
