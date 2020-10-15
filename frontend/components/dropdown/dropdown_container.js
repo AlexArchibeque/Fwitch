@@ -5,7 +5,7 @@ import {logout} from '../../actions/session'
 const mSTP = state => {
 
     return ({
-
+        currentUser: state.session.currentUser
     })
 }
 
@@ -16,4 +16,4 @@ const mDTP = dispatch => {
     })
 }
 
-export default connect(null, mDTP)(DropDown);
+export default connect(mSTP, mDTP)(DropDown);

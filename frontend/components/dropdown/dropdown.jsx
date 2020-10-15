@@ -19,7 +19,12 @@ class DropDown extends React.Component {
 
 
     render(){
-        let dropdownItemContainer = this.state.show ? <DropdownItemContainer logout={this.props.logout}/> : <div></div>
+        let dropdownItemContainer = this.state.show ? 
+        <DropdownItemContainer 
+            logout={this.props.logout} 
+            currentUser={this.props.currentUser}
+            /> : 
+        <div></div>
         return (
             <a onClick={this.showDropDown} className="dropdown-main">
                 <img src={window.Flogo} className="cursor-pointer"/>
