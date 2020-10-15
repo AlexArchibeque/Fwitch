@@ -44,7 +44,7 @@ class NavBar extends React.Component {
     }
 
     handleReset() {
-        this.setState({show:false, signup: '', login: '' })
+        this.setState({show:false, signup: '', login: '', errors: [] })
     }
 
     handleTabs(type) {
