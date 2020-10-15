@@ -4,7 +4,10 @@ import React from 'react';
 // import LoginModal from '../login_modal/modal'
 
 import SignUpContainer from '../session/signup_container';
-import LoginContainer from '../session/login_container'; 
+import LoginContainer from '../session/login_container';
+import DemoContainer from '../session/demo_container';
+
+import DropDownContainer from '../dropdown/dropdown_container';
 
 class NavBar extends React.Component {
     constructor(props){
@@ -31,16 +34,23 @@ class NavBar extends React.Component {
                 setErrors={this.setErrors}
                 />, 
                 show:true })
-
+                
         }else if (type === 'showSignup'){
-
+            
             this.setState({ signup: <SignUpContainer 
                 handleReset={this.handleReset}
                 setErrors={this.setErrors}
                 /> , 
                 show: true})
+        }else if(type === 'demoUser' ) {
+            this.setState({ login: <DemoContainer
+                handleReset={this.handleReset} 
+                setErrors={this.setErrors}
+                />, 
+                show:true 
+            })
         }
-
+                
     }
 
     handleReset() {
@@ -74,26 +84,30 @@ class NavBar extends React.Component {
         })
     }
 
+    //( username: "DemoPowerUser", password: "thebestpassword", email:"TestDemoUser@email.com")
+
+
 
 
     render() {
 
-
+        // Display element for login
         const display = this.props.currentUser ? (
             <div className="nav-bar-btn-container">
-                <h2>Hello! {this.props.currentUser.username}</h2>
-                <button onClick={this.props.logout}>Logout</button>
+                < DropDownContainer />
             </div>
         ) : (
             <>
                 <div className="nav-bar-btn-container">
-                <button className="login-btn" onClick={() => this.showForm('showLogin')}>Log In</button>
-                <button className="signup-btn hover-button click-button" onClick={() => this.showForm('showSignup')}>Sign Up</button>
+                    <button className="demo-btn hover-button click-button cursor-pointer" 
+                    onClick={() =>this.showForm('demoUser')}>Demo</button>
+                    <button className="login-btn cursor-pointer" onClick={() => this.showForm('showLogin')}>Log In</button>
+                    <button className="signup-btn hover-button click-button cursor-pointer" onClick={() => this.showForm('showSignup')}>Sign Up</button>
                 </div>
             </>
         )
 
-
+        // Errors state and show for Modal
         let errors = this.state.errors.length > 0 ? 
         (
         <div className="modal-error-container">
@@ -110,21 +124,25 @@ class NavBar extends React.Component {
         (
         <div></div>
         )
+
+        // Regular Nav-bar without Modal 
          
         if(!this.state.show ){
             return(
                 <nav className="nav-bar">
-                    <a href="#/" className="image-clicker">
+                    <a href="#/" className="cursor-pointer">
                         <img src={window.Fwitchlogo}/>
                     </a>
                     {display}
                 </nav>
             )
         }
+
+        // Modal Nav-Bar
         return(   
             <>
             <nav className="nav-bar">
-                <a href="#/">
+                <a href="#/" className="cursor-pointer">
                 <img src={window.Fwitchlogo}/>
                 </a> 
                 {display}            

@@ -34,13 +34,15 @@ class Login extends React.Component {
                 <label>Username
                     <input type="text" 
                     value={this.state.username} 
-                    onChange={this.handleInput('username')}/>
+                    onChange={this.handleInput('username')}
+                    />
                 </label>
 
                 <label>Password
                     <input type="password" 
                     value={this.state.password} 
-                    onChange={this.handleInput('password')}/>
+                    onChange={this.handleInput('password')}
+                    />
                 </label>
 
                 

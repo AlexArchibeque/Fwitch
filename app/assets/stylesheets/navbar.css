@@ -25,7 +25,7 @@ Buttons:
     width: 15%;
     height: 80%;
 }
-.login-btn, .signup-btn {
+.login-btn, .signup-btn, .demo-btn {
     font-family: 'Ubuntu',sans-serif;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ Buttons:
     margin-right: 5px;
 }
 
-.signup-btn {
+.signup-btn, .demo-btn {
     background-color: #9147FF;
 }
 
