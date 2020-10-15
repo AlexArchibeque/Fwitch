@@ -16,7 +16,8 @@ class NavBar extends React.Component {
           login: '',
           signup: '',
           errors: [],
-          show: false
+          show: false,
+          id: 0
         };
 
         this.showForm = this.showForm.bind(this)
@@ -33,7 +34,9 @@ class NavBar extends React.Component {
                 handleReset={this.handleReset} 
                 setErrors={this.setErrors}
                 />, 
-                show:true })
+                show:true,
+                id: 1
+            })
                 
         }else if (type === 'showSignup'){
             
@@ -41,13 +44,16 @@ class NavBar extends React.Component {
                 handleReset={this.handleReset}
                 setErrors={this.setErrors}
                 /> , 
-                show: true})
+                show: true,
+                id: 0
+            })
         }else if(type === 'demoUser' ) {
             this.setState({ login: <DemoContainer
                 handleReset={this.handleReset} 
                 setErrors={this.setErrors}
                 />, 
-                show:true 
+                show:true,
+                id: 2
             })
         }
                 
@@ -58,14 +64,18 @@ class NavBar extends React.Component {
     }
 
     handleTabs(type) {
-        if(type === 'login') {
+        debugger
+        if(this.state.id === 2){
+            return;
+        }else if(type === 'login') {
             this.setState({
             login: <LoginContainer 
             handleReset={this.handleReset} 
             setErrors={this.setErrors}
             />,
             signup: '',
-            errors: []
+            errors: [],
+            id: 1
             })
         }else{
             this.setState({
@@ -73,7 +83,8 @@ class NavBar extends React.Component {
             signup: <SignUpContainer 
             handleReset={this.handleReset}
             setErrors={this.setErrors}/>,
-            errors: []
+            errors: [],
+            id: 0
             })
         }
     }
@@ -83,11 +94,6 @@ class NavBar extends React.Component {
             errors:this.props.errors
         })
     }
-
-    //( username: "DemoPowerUser", password: "thebestpassword", email:"TestDemoUser@email.com")
-
-
-
 
     render() {
 
