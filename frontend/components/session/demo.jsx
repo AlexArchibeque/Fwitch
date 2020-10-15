@@ -12,8 +12,8 @@ class Demo extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            username:'DemoPowerUser',
-            password: 'thebestpassword'
+            username:'',
+            password: ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -21,15 +21,15 @@ class Demo extends React.Component {
 
     componentDidMount() {
         let info = {username: 'DemoPowerUser', password: 'thebestpassword'}
-        for(let i = 0; i < info.username.length; i++){
-            this.setState({username: info.username.slice(0,i) })
+        for(let i = 0; i <= info.username.length; i++){
+            setTimeout(()=>{this.setState({username: info.username.slice(0,i) })}, 100 * i);
         }
 
-        for(let i = 0; i < info.password.length; i++){
-            this.setState({password: info.password.slice(0,i) })
+        for(let i = 0; i <= info.password.length; i++){
+            setTimeout(()=>(this.setState({password: info.password.slice(0,i) })), 150 * i)
         }
 
-        this.handleSubmit();
+        setTimeout(this.handleSubmit, 2500);
     }
 
     handleSubmit(e) {
@@ -55,7 +55,7 @@ class Demo extends React.Component {
                         value={this.state.password} 
                         />
                     </label>             
-                <button className="form-submit-button hover-button click-button" onClick={this.handleSubmit}>Login</button>
+                <button className="form-submit-button hover-button click-button" onClick={this.handleSubmit} disabled>Login</button>
                 
                 </form>
             </>
