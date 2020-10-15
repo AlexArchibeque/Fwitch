@@ -1,10 +1,17 @@
+/*
 
+Buttons:
 
+#9147FF - Regular
+#772ce8 - Hover
+#5c16c5 - Click
+
+*/
 
 .nav-bar {
     display: flex;
-    height: 40px;
-    background-color: #1f1f23;
+    height: 46px;
+    background-color: #18181b;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -13,14 +20,33 @@
 /* Login, Signup, DemoUser Buttons */
 .nav-bar-btn-container{
     display:flex;
-    justify-content: space-between;
-    width: 12%;
+    justify-content: flex-end;
+
+    width: 15%;
+    height: 80%;
 }
-
-.login-btn {
-
+.login-btn, .signup-btn {
+    font-family: 'Ubuntu',sans-serif;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 5px;
 }
 
 .signup-btn {
+    background-color: #9147FF;
+}
 
+.login-btn {
+    background-color: #3a3a3d;
+}
+
+.login-btn:hover {
+    background-color: #26262c;
 }

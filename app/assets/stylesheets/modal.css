@@ -73,7 +73,7 @@
 .modal-header{
     font-size: 30px;
     margin:20px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* Modals */
@@ -107,7 +107,7 @@
     bottom: 0%;
     left: 0%;
     right: 0%;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .85);
 }
 
 /* Login Tabs */
@@ -127,7 +127,7 @@
 
 .login-tabs > a {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.2;
     margin-right: 15px;
     cursor: pointer;

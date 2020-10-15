@@ -40,7 +40,7 @@ class Signup extends React.Component {
                     <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
                     </label>
                     
-                    <button className="form-submit-button" onClick={this.handleSubmit}>Sign Up </button>
+                    <button className="form-submit-button hover-button click-button" onClick={this.handleSubmit}>Sign Up </button>
                     
                 </form>
             </>

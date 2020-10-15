@@ -87,8 +87,8 @@ class NavBar extends React.Component {
         ) : (
             <>
                 <div className="nav-bar-btn-container">
-                <button className="login-btn" onClick={() => this.showForm('showLogin')} >Log In</button>
-                <button className="signup-btn" onClick={() => this.showForm('showSignup')} >Sign Up</button>
+                <button className="login-btn" onClick={() => this.showForm('showLogin')}>Log In</button>
+                <button className="signup-btn hover-button click-button" onClick={() => this.showForm('showSignup')}>Sign Up</button>
                 </div>
             </>
         )
@@ -114,7 +114,7 @@ class NavBar extends React.Component {
         if(!this.state.show ){
             return(
                 <nav className="nav-bar">
-                    <a className="image-clicker">
+                    <a href="#/" className="image-clicker">
                         <img src='/assets/Fwitch-logo.png'/>
                     </a>
                     {display}
@@ -124,7 +124,7 @@ class NavBar extends React.Component {
         return(   
             <>
             <nav className="nav-bar">
-                <a>
+                <a href="#/">
                 <img src='/assets/Fwitch-logo.png'/>
                 </a> 
                 {display}            
@@ -142,13 +142,13 @@ class NavBar extends React.Component {
                             <ul className="login-tabs">
         
                             <a 
-                            className={this.state.login? "tab-selected": ""} 
+                            className={`${this.state.login? "tab-selected": ""} hover-text`}
                             onClick={() => this.handleTabs('login')}>
                                 Log In
                             </a>
                             
                             <a 
-                            className={this.state.signup? "tab-selected": ""}
+                            className={`${this.state.signup? "tab-selected": ""} hover-text`}
                             onClick={() => this.handleTabs('signup')}>
                                 Sign Up
                             </a>
