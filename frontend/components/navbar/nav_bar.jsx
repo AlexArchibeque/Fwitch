@@ -115,7 +115,7 @@ class NavBar extends React.Component {
             return(
                 <nav className="nav-bar">
                     <a href="#/" className="image-clicker">
-                        <img src='/assets/Fwitch-logo.png'/>
+                        <img src={window.Fwitchlogo}/>
                     </a>
                     {display}
                 </nav>
@@ -125,7 +125,7 @@ class NavBar extends React.Component {
             <>
             <nav className="nav-bar">
                 <a href="#/">
-                <img src='/assets/Fwitch-logo.png'/>
+                <img src={window.Fwitchlogo}/>
                 </a> 
                 {display}            
             </nav>
