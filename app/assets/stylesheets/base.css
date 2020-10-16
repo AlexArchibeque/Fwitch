@@ -1,7 +1,17 @@
+::-webkit-scrollbar {
+    /* width: 0px;
+    background: transparent; */
+    display: none;
+}
+
+
+
 .cursor-pointer {
     cursor: pointer;
 }
 body {
+    height: 200%;
+    overflow-y: hidden;
     background-color: #0e0e10;
     color: white;
 }
@@ -33,5 +43,15 @@ body {
     width: 100%;
     font-size: 50px;
     font-weight: 600;
+}
+
+/* Home Page */
+
+.home-page-container{
+    display: flex;
+    overflow: hidden;
+    overflow-y: scroll;
+    /* height: calc(100vh - 48px); */
+    height: 100vh;
 }
 

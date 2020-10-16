@@ -15,7 +15,7 @@ import MainPageContainer from './main/main_container'
 const App = () => {
 
     return (
-        <div>
+        <div className="component-main-container">
             <Route path="/" component={ NavBarContainer } />
             <Route path="/" component={ MainPageContainer } />
         </div>
