@@ -3,7 +3,7 @@
     flex-direction: column;
     overflow-y: hidden;
     background-color: #1f1f23;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 48px);
     min-width:250px;
     max-width: 250px;
 
