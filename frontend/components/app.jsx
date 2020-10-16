@@ -6,9 +6,9 @@ import AuthRoute from '../util/route_utils'
 import ProtectedRoute from '../util/route_utils'
 
 // Components
-import Home from './home/home'
 import NavBarContainer from './navbar/nav_bar_container'
-import NoPageComponent from './home/404Page'
+import MainPageContainer from './main/main_container'
+
 
 
 
@@ -17,10 +17,7 @@ const App = () => {
     return (
         <div>
             <Route path="/" component={ NavBarContainer } />
-            <Switch>
-                <Route exact path="/" component={ Home } />
-                <Route component={NoPageComponent} />
-            </Switch>
+            <Route path="/" component={ MainPageContainer } />
         </div>
     )
 }

@@ -64,7 +64,6 @@ class NavBar extends React.Component {
     }
 
     handleTabs(type) {
-        debugger
         if(this.state.id === 2){
             return;
         }else if(type === 'login') {
@@ -136,9 +135,14 @@ class NavBar extends React.Component {
         if(!this.state.show ){
             return(
                 <nav className="nav-bar">
-                    <a href="#/" className="cursor-pointer">
-                        <img src={window.Fwitchlogo}/>
-                    </a>
+                    <div className="left-nav-bar-container">
+                        <a href="#/" className="cursor-pointer"><img className="flex fwitch-logo" src={window.Fwitchlogo}/></a>
+                    <div className="linked-text-container">
+                        <a href="#/directory" className="tw-text hover-text click-text">Browse</a>
+                        <a href="#/about" className="tw-text hover-text click-text">About</a>
+                    </div>
+
+                    </div>
                     {display}
                 </nav>
             )
@@ -148,9 +152,13 @@ class NavBar extends React.Component {
         return(   
             <>
             <nav className="nav-bar">
-                <a href="#/" className="cursor-pointer">
-                <img src={window.Fwitchlogo}/>
-                </a> 
+                <div className="left-nav-bar-container">
+                    <a href="#/" className="cursor-pointer"><img className="flex fwitch-logo" src={window.Fwitchlogo}/></a> 
+                    <div className="linked-text-container">
+                        <a href="#/directory" className="tw-text hover-text click-text">Browse</a>
+                        <a href="#/about" className="tw-text hover-text click-text">About</a>
+                    </div>
+                </div>
                 {display}            
             </nav>
             

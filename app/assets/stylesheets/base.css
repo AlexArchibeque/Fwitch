@@ -6,16 +6,12 @@ body {
     color: white;
 }
 
-.page-not-found {
-    display: block;
-    height: 100%;
-    width: 100%;
-    font-size: 50px;
-    font-weight: 600;
-}
-
 .hover-text:hover{
     color: #9147FF ;
+}
+
+.click-text:active {
+    color: #772ce8;
 }
 
 .hover-button:hover {
@@ -25,3 +21,17 @@ body {
 .click-button:active {
     background-color: #5c16c5;
 }
+
+.flex {
+    display:flex;
+}
+
+/* 404 Page */
+.page-not-found {
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 600;
+}
+

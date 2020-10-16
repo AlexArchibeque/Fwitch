@@ -15,6 +15,7 @@ Buttons:
     justify-content: space-between;
     align-items: center;
     position: relative;
+    border-bottom: 2px #040404 solid;
 }
 
 /* Login, Signup, DemoUser Buttons */
@@ -49,4 +50,16 @@ Buttons:
 
 .login-btn:hover {
     background-color: #26262c;
+}
+
+/* Left Nav Container */
+
+.left-nav-bar-container {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fwitch-logo {
+    padding: 10px;
 }

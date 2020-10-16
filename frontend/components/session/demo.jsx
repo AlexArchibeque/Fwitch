@@ -48,11 +48,13 @@ class Demo extends React.Component {
                     <label>Username
                         <input type="text" 
                         value={this.state.username} 
+                        readOnly
                         />
                     </label>
                     <label>Password
                         <input type="password" 
                         value={this.state.password} 
+                        readOnly
                         />
                     </label>             
                 <button className="form-submit-button hover-button click-button" onClick={this.handleSubmit} disabled>Login</button>

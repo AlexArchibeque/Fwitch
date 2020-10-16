@@ -1,0 +1,13 @@
+.linked-text-container {
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tw-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
