@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Main from './main';
+import Categories from './categories';
 
 const mSTP = state => ({
 
@@ -9,4 +9,4 @@ const mDTP = dispatch => ({
 
 })
 
-export default connect(mSTP,mDTP)(Main);
+export default connect(mSTP,mDTP)(Categories);
