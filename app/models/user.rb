@@ -55,6 +55,9 @@ class User < ApplicationRecord
 
     # Associations
 
+    has_many :clips,
+        foreign_key: :channel_id
+
     # has_one :channel
 
 end
