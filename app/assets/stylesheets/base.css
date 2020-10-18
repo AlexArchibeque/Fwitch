@@ -4,6 +4,9 @@
     display: none;
 }
 
+html {
+    font-family: Inter,Roobert,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
 
 
 .cursor-pointer {

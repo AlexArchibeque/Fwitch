@@ -1,3 +1,56 @@
 .directory-container {
-    font-size: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 25px;
+    padding-top: 30px;
+    height: 100vh;
+    overflow-y: scroll;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: Inter,Roobert,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.directory-tabs-container {
+    display: flex;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    line-height: 1.2;
+}
+
+.directory-tabs-container > a {
+    text-decoration: none;
+    /* border-bottom: 2px transparent; */
+}
+
+.directory-tabs-container > a:active {
+    color: #9147FF;
+}
+.directory-tabs-container > a:hover {
+    color: #9147FF;
+}
+
+/* Individual Links */
+
+.categories-link-other, .categories-link-start {
+    display:flex;
+    padding-bottom: 5px;
+}
+
+.categories-link-start {
+    margin-right: 15px
+}
+
+.categories-link-other {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tab-selected-directory{
+    color: #9147FF;
+    border-bottom: 2px solid #9147FF;
 }

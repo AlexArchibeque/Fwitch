@@ -8,7 +8,7 @@ class ClipsPage extends React.Component{
     render() {
         return(
             <div className="directory-container">
-                <h1> Clips Page! </h1>
+                <h1>Clips</h1>
                 <TabsContainer />
                 <ClipsContainer />
             </div>
