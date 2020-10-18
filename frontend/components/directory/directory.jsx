@@ -14,7 +14,9 @@ class DirectoryPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.categoriesList()
+        if(Object.entries(this.props.categories).length === 0){
+            return this.props.categoriesList()
+        }
     }
 
     render() {

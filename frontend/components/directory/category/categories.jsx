@@ -9,6 +9,12 @@ class Categories extends React.Component {
         this.props = props
     }
 
+    componentDidMount() {
+        if(Object.entries(this.props.categories).length === 0){
+            return this.props.categoriesList()
+        }
+    }
+
     render() {
         const {categories} = this.props;
         return(
