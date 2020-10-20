@@ -38,20 +38,19 @@ class Carousel extends React.Component {
         this.setState({slide: num})
     }
 
-    shuffle(a) {
-        for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
-        }
-        return a;
-    }
+    // shuffle(a) {
+    //     for (let i = a.length - 1; i > 0; i--) {
+    //         const j = Math.floor(Math.random() * (i + 1));
+    //         [a[i], a[j]] = [a[j], a[i]];
+    //     }
+    //     return a;
+    // }
 
     render(){
         let sliderArr = [0,1,2,3,4]
 
         if(Object.entries(this.props.clips).length > 0){
             sliderArr = Object.values(this.props.clips).slice(0,5)
-            sliderArr = this.shuffle(sliderArr)
         }
         let front = this.state.slide
 
