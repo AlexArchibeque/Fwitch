@@ -8,6 +8,22 @@ html {
     font-family: Inter,Roobert,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+body {
+    height: 200%;
+    overflow-y: hidden;
+    background-color: #0e0e10;
+    color: white;
+}
+
+hr {
+    width:99%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    background-color: #272728;
+    border: 1px solid #272728;
+}
+
+
 video:focus {
     outline: none;
 }
@@ -15,12 +31,6 @@ video:focus {
 
 .cursor-pointer {
     cursor: pointer;
-}
-body {
-    height: 200%;
-    overflow-y: hidden;
-    background-color: #0e0e10;
-    color: white;
 }
 
 .hover-text:hover{

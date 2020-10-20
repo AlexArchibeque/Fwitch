@@ -17,7 +17,7 @@ class MainPageCenter extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="inner-main-page-container">
                 <Route exact path="/directory/clips" component={ClipsPageContainer}/>
                 <Switch>
                     <Route path="/directory/:category" component={InnerCategoryContainer}/>

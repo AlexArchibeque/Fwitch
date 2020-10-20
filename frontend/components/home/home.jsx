@@ -11,16 +11,16 @@ class Home extends React.Component {
 
 
                 <div className="categories-home-container" >
-
                     <div>
-                        <h2><a href="#/directory/clips" className="hover-text click-text">Clips</a> of Fwitch!</h2>
+                        <h2><a href="#/directory/clips" className="hover-text click-text">Clips</a> of Fwitch</h2>
                     </div>
                         <ClipsContainer />
-
+                    <hr/>
                     <div>
                         <h2><a href="#/directory" className="hover-text click-text">Categories</a> You May Like</h2>
                     </div>
                         <CategoryContainer />
+                    <hr/>
                 </div>
             </div>
         )

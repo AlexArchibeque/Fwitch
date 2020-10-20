@@ -1,7 +1,6 @@
 import React from 'react';
-import {getaClip} from '../../../actions/clips'
+import {getaClip, clearClips} from '../../../actions/clips'
 import {connect} from 'react-redux';
-import NoPageComponent from '../../home/404Page'
 
 
 class ClipPage extends React.Component {
@@ -17,6 +16,10 @@ class ClipPage extends React.Component {
 
     componentDidMount(){
         this.clipProm()
+    }
+
+    componentWillUnmount() {
+        this.props.clearClips();
     }
 
     clipProm(){
@@ -53,7 +56,8 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => ({
-    getaClip: (clipId) => dispatch(getaClip(clipId))
+    getaClip: (clipId) => dispatch(getaClip(clipId)),
+    clearClips: () => dispatch(clearClips())
 })
 
 

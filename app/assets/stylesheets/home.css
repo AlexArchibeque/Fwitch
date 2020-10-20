@@ -15,6 +15,8 @@
     flex-direction: column;
     align-items: flex-start;
     font-size: 18px;
+    margin-left:20px;
+    margin-top:20px;
 }
 
 .categories-home-container > div > h2 > a {

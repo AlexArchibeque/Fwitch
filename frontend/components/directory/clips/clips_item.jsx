@@ -14,7 +14,7 @@ class ClipItem extends React.Component {
                 <a href={`#/videos/${video.id}`}>
                     <video src={`${video.videoUrl}`} type="video/mp4"/>
                 </a>
-                {video.description}
+                <p>{video.description}</p>
             </div>
         )
     }
