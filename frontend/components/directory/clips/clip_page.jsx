@@ -35,7 +35,7 @@ class ClipPage extends React.Component {
         if(Object.entries(clip).length > 0 ){         
             return (
                 <div className="clip-page-container">
-                    <video src={`${value.videoUrl}`} controls />
+                    <video src={`${value.videoUrl}`} controls autoPlay muted />
                     <p>{value.description}</p>
                 </div>
             ) 

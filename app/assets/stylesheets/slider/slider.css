@@ -24,7 +24,7 @@
 
 /* Slider Items */
 .slider-item {
-    width: 600px;
+    width: 40%;
     height: auto;
     position: absolute;
     display:flex;
@@ -35,7 +35,7 @@
 }
 
 .slider-item > video:hover {
-    border: 1px solid red;
+    border: 1px solid #9147FF;
 }
 
 .slider-item-front {
@@ -44,19 +44,19 @@
 }
 
 .slider-item-left {
-    transform:translate3d(-30%,0px,-100px);
+    transform:translate3d(-40%,0px,-100px);
 }
 
 .slider-item-back-left {
-    transform:translate3d(-50%,0px,-200px);
+    transform:translate3d(-70%,0px,-200px);
 }
 
 .slider-item-right {
-    transform:translate3d(30%, 0px, -100px);
+    transform:translate3d(40%, 0px, -100px);
 }
 
 .slider-item-back-right {   
-    transform: translate3d(50%, 0px, -200px);
+    transform: translate3d(70%, 0px, -200px);
 }
 
 /* Inner Slider item */

@@ -11,7 +11,18 @@
 /* Buttons */
 
 .carousel-button {
-    height: 40px;
-    width: 25px;
-    z-index: 10000;
+    font-weight: 600;
+    font-size: 18px;
+    width: 50px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 50px;
+    outline: none;
+    z-index: 999;
+    background-color: transparent;
+}
+
+.carousel-button:hover {
+    background-color: #26262c;
 }
