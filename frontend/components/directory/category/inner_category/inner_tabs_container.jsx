@@ -9,10 +9,17 @@ class InnerTabsContainer extends React.Component {
         this.props = props
         this.state = {
             categories: false,
-            clips: true
+            clips: true,
+            url: ''
         }
 
         this.handleClick = this.handleClick.bind(this)
+    }
+
+    componentDidMount(){
+        let urlArr = decodeURI(window.location.hash).split("/");
+        let urlId = urlArr[urlArr.length-1]
+        this.setState({ url: urlId})
     }
 
     handleClick(type){   
@@ -24,6 +31,7 @@ class InnerTabsContainer extends React.Component {
     }
 
     render() {
+
         let DualContainer = this.state.categories ? <CategoryContainer /> : <ClipsContainer />
         return(
             <div className="inner-category-tabs-container">
@@ -40,4 +48,6 @@ class InnerTabsContainer extends React.Component {
     }
 }
 
+
 export default InnerTabsContainer;
+

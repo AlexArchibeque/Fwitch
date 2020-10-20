@@ -1,5 +1,7 @@
 import React from 'react';
+
 import CategoryContainer from '../directory/category/category_container'
+import ClipsContainer from '../directory/clips/clips_container';
 
 class Home extends React.Component {
 
@@ -9,10 +11,16 @@ class Home extends React.Component {
 
 
                 <div className="categories-home-container" >
+
+                    <div>
+                        <h2><a href="#/directory/clips" className="hover-text click-text">Clips</a> of Fwitch!</h2>
+                    </div>
+                        <ClipsContainer />
+
                     <div>
                         <h2><a href="#/directory" className="hover-text click-text">Categories</a> You May Like</h2>
                     </div>
-                    <CategoryContainer />
+                        <CategoryContainer />
                 </div>
             </div>
         )

@@ -38,7 +38,7 @@ amongUs.photo.attach(io: file, filename:'Among_Us.jpg')
 
 # Production Seeding
 
-dungeonsAndDragons = Category.create!( title: "Dungeons and Dragons" , description: "You say you don't want to play, but can't find a party. Thats why you watch.")
+dungeonsAndDragons = Category.create!( title: "Dungeons and Dragons" , description: "You say you want to play, but can't find a party. Thats why you watch.")
 file1 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Dungeons+%26+Dragons.jpg') # Among Us
 dungeonsAndDragons.photo.attach(io: file1, filename:'Dungeons_and_Dragons.jpg')
 

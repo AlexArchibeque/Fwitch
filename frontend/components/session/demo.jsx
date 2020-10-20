@@ -20,7 +20,9 @@ class Demo extends React.Component {
     }
 
     componentDidMount() {
+
         let info = {username: 'DemoPowerUser', password: 'thebestpassword'}
+
         for(let i = 0; i <= info.username.length; i++){
             setTimeout(()=>{this.setState({username: info.username.slice(0,i) })}, 100 * i);
         }
@@ -29,7 +31,7 @@ class Demo extends React.Component {
             setTimeout(()=>(this.setState({password: info.password.slice(0,i) })), 150 * i)
         }
 
-        setTimeout(this.handleSubmit, 2500);
+        setTimeout(this.handleSubmit, 2500); // 2.5seconds
     }
 
     handleSubmit(e) {

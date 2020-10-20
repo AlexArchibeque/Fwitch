@@ -10,19 +10,24 @@ import InnerCategoryContainer from '../directory/category/inner_category/inner_c
 
 import ClipsPageContainer from '../directory/clips_page_container' 
 
+import ClipPage from '../directory/clips/clip_page'
+
 
 class MainPageCenter extends React.Component {
 
     render(){
         return(
-            <Switch>
-                <Route path="/directory/clips" component={ClipsPageContainer}/>
-                <Route path="/directory/:category" component={InnerCategoryContainer}/>
-                <Route path="/directory" component={ DirectoryContainer } />
-                <Route path="/about" component={ About } />
-                <Route exact path="/" component={ Home } />
-                <Route component={NoPageComponent} />
-            </Switch>
+            <div>
+                <Route exact path="/directory/clips" component={ClipsPageContainer}/>
+                <Switch>
+                    <Route path="/directory/:category" component={InnerCategoryContainer}/>
+                    <Route path="/directory" component={ DirectoryContainer } />
+                    <Route path="/videos/:id" component={ ClipPage } />
+                    <Route path="/about" component={ About } />
+                    <Route exact path="/" component={ Home } />
+                    <Route component={NoPageComponent} />
+                </Switch>
+            </div>
         )
     }
 }

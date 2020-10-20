@@ -13,7 +13,8 @@ class Api::ClipsController < ApplicationController
     end
 
     def show
-            @clip = Clip.find_by(id: params[:id])
-            render :show
+        
+        @clip = Clip.find_by(id: params[:id])
+        render :show
     end
 end
