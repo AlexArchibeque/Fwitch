@@ -1,0 +1,17 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 25px;
+}
+
+
+
+/* Buttons */
+
+.carousel-button {
+    height: 40px;
+    width: 25px;
+    z-index: 10000;
+}
