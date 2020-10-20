@@ -3,7 +3,7 @@ class Api::ClipsController < ApplicationController
     def index      
         if(params[:category_id]) 
             @category = Category.find_by(title: params[:category_id])
-            @all_clips = Clip.find_by(category_id: @category.id)
+            @all_clips = Clip.where(category_id: @category.id)
             render :show_category
         else  
             @clips = Clip.all

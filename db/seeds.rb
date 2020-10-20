@@ -58,9 +58,9 @@ dungeonsAndDragons.photo.attach(io: file1, filename:'Dungeons_and_Dragons.jpg')
 # file5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/MineCraft.jpg')
 # mineCraft.photo.attach(io: file5, filename: 'MineCraft.jpg' )
 
-# superMetroid = Category.create!( title: "Super Metroid" , description: "Old game mostly streamed for nostalgia and saving animals.")
-# file6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Super+Metroid.jpg')
-# superMetroid.photo.attach(io: file6, filename: 'Super_Metroid.jpg' )
+superMetroid = Category.create!( title: "Super Metroid" , description: "Old game mostly streamed for nostalgia and saving animals.")
+file6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Super+Metroid.jpg')
+superMetroid.photo.attach(io: file6, filename: 'Super_Metroid.jpg' )
 
 
 #  id          :bigint           not null, primary key
@@ -100,18 +100,18 @@ xqc_1.video.attach(io: clip2, filename:'instant_death.mp4')
 # clip5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Forsen-InstDeath-MineCraft.mp4')
 # forsen_1.video.attach(io: clip5, filename:'LavaHurts.mp4')
 
-# charles_1 = Clip.create!( description:"Catapillars", category_id: superMetroid.id, channel_id: smcharles.id)
-# clip6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Charles-Catipillars.mp4')
-# charles_1.video.attach(io: clip6, filename:'catapillars.mp4')
+charles_1 = Clip.create!( description:"Catapillars", category_id: superMetroid.id, channel_id: smcharles.id)
+clip6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Charles-Catipillars.mp4')
+charles_1.video.attach(io: clip6, filename:'catapillars.mp4')
 
-# charles_2 = Clip.create!( description:"Red Tower Please?", category_id:superMetroid.id, channel_id:smcharles.id)
-# clip7 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Charles-Jump.mp4')
-# charles_2.video.attach(io: clip7, filename:'red_tower.mp4')
+charles_2 = Clip.create!( description:"Red Tower Please?", category_id:superMetroid.id, channel_id:smcharles.id)
+clip7 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Charles-Jump.mp4')
+charles_2.video.attach(io: clip7, filename:'red_tower.mp4')
 
-# imyt_1 = Clip.create!( description:"So good and Easy", category_id:superMetroid.id, channel_id: imyt.id)
-# clip8 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Game-Is-Ez-Imyt.mp4')
-# imyt_1.video.attach(io: clip8, filename:'so_good.mp4')
+imyt_1 = Clip.create!( description:"So good and Easy", category_id:superMetroid.id, channel_id: imyt.id)
+clip8 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Game-Is-Ez-Imyt.mp4')
+imyt_1.video.attach(io: clip8, filename:'so_good.mp4')
 
-# imyt_2 = Clip.create!( description:"LongJumper Imyt", category_id:superMetroid.id, channel_id: imyt.id)
-# clip9 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Imyt-Moat.mp4')
-# imyt_2.video.attach(io: clip9, filename:'moat_clear.mp4')
+imyt_2 = Clip.create!( description:"LongJumper Imyt", category_id:superMetroid.id, channel_id: imyt.id)
+clip9 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Imyt-Moat.mp4')
+imyt_2.video.attach(io: clip9, filename:'moat_clear.mp4')
