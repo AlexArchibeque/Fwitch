@@ -50,6 +50,7 @@ class Carousel extends React.Component {
         let sliderArr = [0,1,2,3,4]
 
         if(Object.entries(this.props.clips).length > 0){
+            
             sliderArr = Object.values(this.props.clips).slice(0,5)
         }
         let front = this.state.slide

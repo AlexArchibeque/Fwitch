@@ -19,9 +19,9 @@ class Clip < ApplicationRecord
 
     has_one_attached :video
 
-    belongs_to :user,
-        foreign_key: :channel_id
-
     belongs_to :category,
         foreign_key: :category_id
+
+    belongs_to :channel,
+        foreign_key: :channel_id
 end

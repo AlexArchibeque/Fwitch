@@ -9,7 +9,6 @@
 #  username        :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  channel_id      :integer
 #
 # Indexes
 #
@@ -54,10 +53,8 @@ class User < ApplicationRecord
     end
 
     # Associations
-
-    has_many :clips,
-        foreign_key: :channel_id
-
-    # has_one :channel
+    
+    has_one :channel,
+        foreign_key: :owner_id
 
 end

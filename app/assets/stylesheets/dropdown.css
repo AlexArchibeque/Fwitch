@@ -45,12 +45,12 @@
 
 /* Username Container */
 
-.username-conatiner{
+/* .username-container{
     display:flex;
     font-weight: 400;
     font-size: 16px;
 
-}
+} */
 
 .username-container > strong {
     font-weight: 600;
