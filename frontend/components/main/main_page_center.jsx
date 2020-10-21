@@ -12,6 +12,8 @@ import ClipsPageContainer from '../directory/clips_page_container'
 
 import ClipPage from '../directory/clips/clip_page'
 
+import UserStreamPage from '../userpage/user_page_container'
+
 
 class MainPageCenter extends React.Component {
 
@@ -24,6 +26,7 @@ class MainPageCenter extends React.Component {
                     <Route path="/directory" component={ DirectoryContainer } />
                     <Route path="/videos/:id" component={ ClipPage } />
                     <Route path="/about" component={ About } />
+                    <Route exact path="/:user" component={ UserStreamPage} />
                     <Route exact path="/" component={ Home } />
                     <Route component={NoPageComponent} />
                 </Switch>
