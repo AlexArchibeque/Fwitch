@@ -5,22 +5,14 @@ class VideoInfo extends React.Component {
 
     constructor(props){
         super(props)
-
-
-    }
-
-    componentWillUnmount(){
-        this.setState({
-            loaded:false
-        })
     }
 
 
     render(){
         const {video, channels, categories} = this.props;
-        let channelsLoaded = Object.entries(channels).length > 0 ? true : false 
+        let channelsLoaded = Object.entries(channels).length > 0 ? true : false
+        let categoriesLoaded = Object.entries(categories).length > 0 ? true : false 
         debugger
-        
         if(video === false || video === 0) {
             return(
                 <div className="video-info-box-false">
@@ -35,8 +27,13 @@ class VideoInfo extends React.Component {
                     </div>
 
                     <div className="right-side-video-info">
-                        {channelsLoaded ? <a href={`#/${channels[video.channel_id].name}`}> {channels[video.channel_id].ownerName}</a> : <div/>}
-                        {video.description}
+                        {channelsLoaded && categoriesLoaded ?
+                        <div className="inner-right-side-video-info"> 
+                            <a href={`#/${channels[video.channel_id].name}`}> {channels[video.channel_id].ownerName}</a> 
+                            <a href={`#/categories/${categories[video.category_id]}`}>{categories[video.category_id].title}</a>
+                        </div>
+                        : <div/>}
+                        <p>{video.description}</p>
                     </div>
                 </div>
             )

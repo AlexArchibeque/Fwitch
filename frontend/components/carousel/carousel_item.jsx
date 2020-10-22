@@ -3,10 +3,6 @@ import VideoInfoBox from './video_info'
 
 class CarouselItem extends React.Component {
 
-    componentWillUnmount(){
-        
-    }
-
     render(){ 
         const {video} = this.props
         let controlled = false;

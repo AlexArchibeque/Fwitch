@@ -29,19 +29,26 @@ class InnerCategory extends React.Component {
         let {categories} = this.props;
 
         if(Object.entries(categories).length > 0){
+            let finalCategory;
+            Object.values(categories).forEach(cate =>{
+                if(cate.title === categoryName){
+                    finalCategory = cate
+                }
+            })
+            debugger
 
-            if(categories[categoryName] != undefined){  
-            return(
-                <div className="inner-category-fullpage-container">
-                    <div className="inner-category-container">
-                        <img src={categories[categoryName].photoUrl} />
-                        <div className="inner-category-text-container">
-                            <h1>{categories[categoryName].title}</h1>
-                            <p>{categories[categoryName].description}</p>
+            if(finalCategory){  
+                return(
+                    <div className="inner-category-fullpage-container">
+                        <div className="inner-category-container">
+                            <img src={finalCategory.photoUrl} />
+                            <div className="inner-category-text-container">
+                                <h1>{finalCategory.title}</h1>
+                                <p>{finalCategory.description}</p>
+                            </div>
                         </div>
+                        <InnerTabsContainer />
                     </div>
-                    <InnerTabsContainer />
-                </div>
             )
             } else {
                 return(
