@@ -1,9 +1,17 @@
 class Api::UsersController < ApplicationController
 
+    def index 
+        @users = User.all
+        render :index
+        # No index yet
+    end
+
     def create
         @user = User.new(user_params)
 
         if @user.save
+            defaultCategory = Category.find_by(title:"Just Chatting")
+            Channel.create!(name:@user.username, owner_id: @user.id, category_id: defaultCategory.id)
             login!(@user)
             render :show
         else
@@ -12,7 +20,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @user = current_user
+        @user = User.find_by()
     end
 
     def destroy

@@ -1,0 +1,33 @@
+.about-page-container-outer {
+    display:flex;
+    justify-content: center;
+    width:100%;
+    height:100%;
+    align-items:center;
+}
+
+.about-page-container-inner {
+    display:flex;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 500px;
+    height: 300px;
+    background-color: #3a3a3d;
+    flex-direction:column;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.about-page-container-inner-links{ 
+    display:flex;
+    justify-content: space-between;
+    width: 80%;
+
+}
+
+.about-pic {
+    min-width: 100px;
+    max-width: 100px;
+    height: auto;
+}

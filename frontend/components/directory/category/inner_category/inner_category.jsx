@@ -35,7 +35,6 @@ class InnerCategory extends React.Component {
                     finalCategory = cate
                 }
             })
-            debugger
 
             if(finalCategory){  
                 return(
