@@ -21,43 +21,6 @@ forsen = User.create!( username: "forsen", password: "notminecraft", email:"nott
 imyt = User.create!( username: "Imyt", password: "imight", email:"alwaysDocbro@gmail.com")
 smcharles = User.create!( username: "smCharles", password: "neverPB", email:"programmerbyday@gmail.com")
 
-# Area to add Channels
-Channel.destroy_all
-
-demoUserChan = Channel.create!(name: demoUser.username.downcase, description: 'DemoDescription' , owner_id: demoUser.id)
-
-timmyChan = Channel.create!(name: timmy.username.downcase, owner_id: timmy.id)
-
-xqcChan = Channel.create!(name: xqc.username.downcase, description: 'Among Us High Level Gameplay' , owner_id: xqc.id)
-channelPic3 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/xqc+Logo.jpeg')
-xqcChan.channel_pic.attach(io:channelPic3 , filename:'xqcLogo.jpg')
-
-arcadumChan = Channel.create!(name: arcadum.username.downcase, description: 'Heart of Tyre Ep: 410' , owner_id: arcadum.id)
-channelPic4 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/ArcadumLogo.png')
-arcadumChan.channel_pic.attach(io:channelPic4 , filename:'arcadumLogo.jpg')
-
-moonmoonChan = Channel.create!(name: moonmoon.username.downcase, description: 'YungDab At It Again' , owner_id: moonmoon.id)
-channelPic5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/moonmoonLogo.png')
-moonmoonChan.channel_pic.attach(io:channelPic5 , filename:'moonmoonLogo.jpg')
-
-riotgamesChan = Channel.create!(name: riotgames.username.downcase, description: 'LCS ro16' , owner_id: riotgames.id)
-channelPic6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/RiotGamesLogo.png')
-riotgamesChan.channel_pic.attach(io:channelPic6 , filename:'riotgamesLogo.jpg')
-
-forsenChan = Channel.create!(name: forsen.username.downcase, description: 'PB Today' , owner_id: forsen.id)
-channelPic7 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/ForsenLogo.png')
-forsenChan.channel_pic.attach(io:channelPic7 , filename:'forsenLogo.jpg')
-
-imytChan = Channel.create!(name: imyt.username.downcase, description: 'PB 44:00 Hardstuck' , owner_id: imyt.id)
-channelPic8 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/ImytLogo.png')
-imytChan.channel_pic.attach(io:channelPic8 , filename:'imytLogo.jpg')
-
-smcharlesChan = Channel.create!(name: smcharles.username.downcase, description: 'Going to overtake IMYT' , owner_id: smcharles.id)
-channelPic9 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/CharlesLogo.png')
-smcharlesChan.channel_pic.attach(io:channelPic9 , filename:'smcharlesLogo.jpg')
-
-
-
 #######################################################
 
 # Categories
@@ -75,25 +38,65 @@ dungeonsAndDragons = Category.create!( title: "Dungeons and Dragons" , descripti
 file1 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Dungeons+%26+Dragons.jpg') # Among Us
 dungeonsAndDragons.photo.attach(io: file1, filename:'Dungeons_and_Dragons.jpg')
 
-# grandTheftAutoFive = Category.create!( title: "Grand Theft Auto Five" , description: "Such an important sequel, the number had to be spelled out.")
-# file2 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Grand+Theft+Auto+V.jpg')
-# grandTheftAutoFive.photo.attach(io: file2, filename: 'GTA5.jpg' )
+grandTheftAutoFive = Category.create!( title: "Grand Theft Auto Five" , description: "Such an important sequel, the number had to be spelled out.")
+file2 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Grand+Theft+Auto+V.jpg')
+grandTheftAutoFive.photo.attach(io: file2, filename: 'GTA5.jpg' )
 
-# justChatting = Category.create!( title: "Just Chatting" , description: "Just come in and chat for a little bit.")
-# file3 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Just+Chatting.jpg')
-# justChatting.photo.attach(io: file3, filename: 'Just_chatting.jpg' )
+justChatting = Category.create!( title: "Just Chatting" , description: "Just come in and chat for a little bit.")
+file3 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Just+Chatting.jpg')
+justChatting.photo.attach(io: file3, filename: 'Just_chatting.jpg' )
 
-# leagueOfLegends = Category.create!( title: "League Of Legends" , description: "Super serious and totally not party game.")
-# file4 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/League+of+Legends.jpg')
-# leagueOfLegends.photo.attach(io: file4, filename: 'LoL.jpg' )
+leagueOfLegends = Category.create!( title: "League Of Legends" , description: "Super serious and totally not party game.")
+file4 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/League+of+Legends.jpg')
+leagueOfLegends.photo.attach(io: file4, filename: 'LoL.jpg' )
 
-# mineCraft = Category.create!( title: "Mine Craft" , description: "Timeless classic that even your grandma will love!")
-# file5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/MineCraft.jpg')
-# mineCraft.photo.attach(io: file5, filename: 'MineCraft.jpg' )
+mineCraft = Category.create!( title: "Mine Craft" , description: "Timeless classic that even your grandma will love!")
+file5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/MineCraft.jpg')
+mineCraft.photo.attach(io: file5, filename: 'MineCraft.jpg' )
 
 superMetroid = Category.create!( title: "Super Metroid" , description: "Old game mostly streamed for nostalgia and saving animals.")
 file6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/categories/Super+Metroid.jpg')
 superMetroid.photo.attach(io: file6, filename: 'Super_Metroid.jpg' )
+
+
+
+# Area to add Channels
+Channel.destroy_all
+
+demoUserChan = Channel.create!(name: demoUser.username.downcase, description: 'DemoDescription' , owner_id: demoUser.id, category_id: justChatting.id)
+
+timmyChan = Channel.create!(name: timmy.username.downcase, owner_id: timmy.id, category_id: justChatting.id)
+
+xqcChan = Channel.create!(name: xqc.username.downcase, description: 'Among Us High Level Gameplay' , owner_id: xqc.id, category_id: amongUs.id)
+channelPic3 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/xqc+Logo.jpeg')
+xqcChan.channel_pic.attach(io:channelPic3 , filename:'xqcLogo.jpg')
+
+arcadumChan = Channel.create!(name: arcadum.username.downcase, description: 'Heart of Tyre Ep: 410' , owner_id: arcadum.id, category_id: dungeonsAndDragons.id)
+channelPic4 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/ArcadumLogo.png')
+arcadumChan.channel_pic.attach(io:channelPic4 , filename:'arcadumLogo.jpg')
+
+moonmoonChan = Channel.create!(name: moonmoon.username.downcase, description: 'YungDab At It Again' , owner_id: moonmoon.id, category_id: grandTheftAutoFive.id)
+channelPic5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/moonmoonLogo.png')
+moonmoonChan.channel_pic.attach(io:channelPic5 , filename:'moonmoonLogo.jpg')
+
+riotgamesChan = Channel.create!(name: riotgames.username.downcase, description: 'LCS ro16' , owner_id: riotgames.id, category_id: leagueOfLegends.id)
+channelPic6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/RiotGamesLogo.png')
+riotgamesChan.channel_pic.attach(io:channelPic6 , filename:'riotgamesLogo.jpg')
+
+forsenChan = Channel.create!(name: forsen.username.downcase, description: 'PB Today' , owner_id: forsen.id, category_id: mineCraft.id)
+channelPic7 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/ForsenLogo.png')
+forsenChan.channel_pic.attach(io:channelPic7 , filename:'forsenLogo.jpg')
+
+imytChan = Channel.create!(name: imyt.username.downcase, description: 'PB 44:00 Hardstuck' , owner_id: imyt.id, category_id: superMetroid.id)
+channelPic8 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/ImytLogo.png')
+imytChan.channel_pic.attach(io:channelPic8 , filename:'imytLogo.jpg')
+
+smcharlesChan = Channel.create!(name: smcharles.username.downcase, description: 'Going to overtake IMYT' , owner_id: smcharles.id, category_id: superMetroid.id)
+channelPic9 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/CharlesLogo.png')
+smcharlesChan.channel_pic.attach(io:channelPic9 , filename:'smcharlesLogo.jpg')
+
+
+
 
 
 Clip.destroy_all

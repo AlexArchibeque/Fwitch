@@ -1,0 +1,38 @@
+.video-info-box, .video-info-box-false {
+    width: 100%;
+    height: 60px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+.video-info-box {
+    background-color: #18181b;
+    display:flex;
+    align-items:center
+
+}
+
+.video-info-box-false {
+    background-color: transparent;
+    color: transparent;
+}
+
+.left-side-video-info {
+    display: flex;
+    min-width: 40px;
+    max-width: 50px;
+    margin-right: 10px;
+
+}
+
+.left-side-video-info >img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.right-side-video-info {
+    display:flex;
+    flex-direction: column;
+}

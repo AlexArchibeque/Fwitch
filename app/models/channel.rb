@@ -7,11 +7,13 @@
 #  name        :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  category_id :integer
 #  owner_id    :integer          not null
 #
 # Indexes
 #
-#  index_channels_on_owner_id  (owner_id)
+#  index_channels_on_category_id  (category_id)
+#  index_channels_on_owner_id     (owner_id)
 #
 class Channel < ApplicationRecord
     validates :name, presence: true
@@ -29,4 +31,8 @@ class Channel < ApplicationRecord
 
     has_many :clips,
         foreign_key: :channel_id
+
+    belongs_to :category,
+        foreign_key: :category_id
+
 end

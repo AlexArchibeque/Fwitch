@@ -6,5 +6,7 @@
         else
             json.channelPhoto "default"
         end
+        json.ownerName channel.user.username
+        json.categoryTitle channel.category.title
     end
 end
