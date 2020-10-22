@@ -31,7 +31,7 @@ class VideoInfo extends React.Component {
                             <a className="right-side-video-channel cursor-pointer"
                             href={`#/${channels[video.channel_id].name}`}> {channels[video.channel_id].ownerName}</a> 
                             <a className="right-side-video-category cursor-pointer"
-                            href={`#/categories/${categories[video.category_id]}`}>{categories[video.category_id].title}</a>
+                            href={`#/directory/${categories[video.category_id].title}`}>{categories[video.category_id].title}</a>
                         </div>
                         : <div/>}
                         {channelsLoaded ?
