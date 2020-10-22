@@ -12,7 +12,6 @@ class VideoInfo extends React.Component {
         const {video, channels, categories} = this.props;
         let channelsLoaded = Object.entries(channels).length > 0 ? true : false
         let categoriesLoaded = Object.entries(categories).length > 0 ? true : false 
-        debugger
         if(video === false || video === 0) {
             return(
                 <div className="video-info-box-false">
@@ -29,11 +28,18 @@ class VideoInfo extends React.Component {
                     <div className="right-side-video-info">
                         {channelsLoaded && categoriesLoaded ?
                         <div className="inner-right-side-video-info"> 
-                            <a href={`#/${channels[video.channel_id].name}`}> {channels[video.channel_id].ownerName}</a> 
-                            <a href={`#/categories/${categories[video.category_id]}`}>{categories[video.category_id].title}</a>
+                            <a className="right-side-video-channel cursor-pointer"
+                            href={`#/${channels[video.channel_id].name}`}> {channels[video.channel_id].ownerName}</a> 
+                            <a className="right-side-video-category cursor-pointer"
+                            href={`#/categories/${categories[video.category_id]}`}>{categories[video.category_id].title}</a>
                         </div>
                         : <div/>}
-                        <p>{video.description}</p>
+                        {channelsLoaded ?
+                        <div className="inner-inner-right-side-video-info">
+                            <p className="inner-right-side-description">Current Stream: </p> 
+                            <p className="inner-right-side-description">{channels[video.channel_id].description}</p>
+                        </div> 
+                        : <div/>}
                     </div>
                 </div>
             )

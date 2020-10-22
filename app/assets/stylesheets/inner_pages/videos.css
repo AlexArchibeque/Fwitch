@@ -11,8 +11,8 @@
 
 .video-container > a > video {
     display:flex;
-    width: 400px;
-    height: 230px;
+    width: 350px;
+    height: 200px;
     margin: 10px;
     border: transparent solid 2px;
 }
