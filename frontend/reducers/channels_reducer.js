@@ -5,7 +5,7 @@ const channelsReducer = (state={}, action) => {
 
     switch(action.type) {
         case GET_CHANNELS:
-            return action.channels;
+            return Object.assign({}, state,action.channels);
         case REMOVE_CHANNELS:
             return {};
         default:

@@ -42,7 +42,7 @@ class Clips extends React.Component {
             <div className="video-item-container">
                 {values.map(video => {
                     return(
-                        < ClipItem key={video.id} video={video}/>
+                        < ClipItem key={video.id} video={video} getChannel={this.props.getChannel} channels={this.props.channels}/>
                     )
                 })}
             </div>
