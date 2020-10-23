@@ -7,15 +7,12 @@ Users can edit their stream layouts, upload clips, and change their streaming ti
 ### Technologies used
 For fwitch, I used a full stack of technologies consisting of:
 * **Backend**
-  * Ruby on Rails
-  
+  **Ruby on Rails**
      Handles all the backend requests and sends back the json of the requested data from the frontend.
 * **FrontEnd**
-  * React 
-      
+  **React**   
      Handles the views and works with the backend using Ajax calls to retriev data. Stored in the /frontend folder.
-  * Redux
-    
+  **Redux**
     Manages the state of the program for the fronted, holding data retrieved from the backend for future or current use.
 
 ### Features
@@ -24,6 +21,8 @@ For fwitch, I used a full stack of technologies consisting of:
     * [Signup](https://github.com/AlexArchibeque/Fwitch#signup)
     * [Demo User](https://github.com/AlexArchibeque/Fwitch#demo-user)
 * [Carousel of Videos](https://github.com/AlexArchibeque/Fwitch#carousel-of-videos)
+* [Uploading Videos](https://github.com/AlexArchibeque/Fwitch#uploading-videos)
+* [Uploading Channel Images](https://github.com/AlexArchibeque/Fwitch#uploading-channel-images)
 
 ## User Authentication
 
@@ -130,3 +129,7 @@ The css behind the JS
     }
 ```
 
+## Uploading Videos
+    TBD
+## Uploading Channel Images
+    TBD
