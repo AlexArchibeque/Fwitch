@@ -1,4 +1,3 @@
-![alt-text](https://github.com/AlexArchibeque/Fwitch/blob/main/app/assets/images/Fwitch-logo.png "Logo")
 # [Fwitch](https://fwitch.herokuapp.com/#/) 
 
 Fwitch is a single page app styled interactive [twitch.tv](twitch.tv) clone. 
