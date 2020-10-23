@@ -31,19 +31,24 @@ Fwitch uses BCrypt for password salting and hashing in order to create a safe en
 
 ### Login
 Ability to log in with an account already signed up and saved to the backend.
+
 ![alt-text](https://github.com/AlexArchibeque/Fwitch/blob/main/app/assets/images/gifsforFwitch/login-page.png "Login Modal")
 ### Signup
 Ability to sign up and have data saved persistently to the back end.
+
 ![alt-text](https://github.com/AlexArchibeque/Fwitch/blob/main/app/assets/images/gifsforFwitch/signup-page.png "Signup Modal")
 ### Demo User
 Ability to demo the site without creating an account.
+
 ![alt-text](https://github.com/AlexArchibeque/Fwitch/blob/main/app/assets/images/gifsforFwitch/clickbutton.gif "Straightforward button press")
 
 ![alt-text](https://github.com/AlexArchibeque/Fwitch/blob/main/app/assets/images/gifsforFwitch/AutoLogin.gif "Demo User Auto Login")
+
 This particular feature was a bit confusing for me, as keeping the styling of the login page was something I valued highly. Also factoring in all the ways the user could stop the process made it a little tricky to deal with.
 
 Due to the Asynchronous nature of Javascript I ended using two for loops hoping that it would be slow enough in order to get an animation, but that did not workout. So I also added in the setTimeouts in order to make it all
 animate smoothly before eventually pressing the button and logging the demo user in.
+
 ```js
     let info = {username: 'DemoPowerUser', password: 'thebestpassword'}
     for(let i = 0; i <= info.username.length; i++){
