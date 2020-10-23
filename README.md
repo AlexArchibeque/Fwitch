@@ -43,4 +43,4 @@ Ability to demo the site without creating an account.
 
 ## Carousel Of Videos
 
-https://media0.giphy.com/media/DYn4a1bzfqU1R4Jfrf/giphy.gif
+![alt-text](https://github.com/AlexArchibeque/Fwitch/blob/main/app/assets/images/gifsforFwitch/carouselgif.gif "Carousel of dreams")
