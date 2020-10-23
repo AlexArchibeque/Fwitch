@@ -19,7 +19,28 @@ For fwitch, I used a full stack of technologies consisting of:
     Manages the state of the program for the fronted, holding data retrieved from the backend for future or current use.
 
 ### Features
-* [User Authentication](https://github.com/AlexArchibeque/Fwitch/edit/main/README.md/#Authentication)
-* Carousel of Videos
+* [User Authentication](https://github.com/AlexArchibeque/Fwitch#user-authentication)
+    * [Login](https://github.com/AlexArchibeque/Fwitch#login)
+    * [Signup](https://github.com/AlexArchibeque/Fwitch#signup)
+    * [Demo User](https://github.com/AlexArchibeque/Fwitch#demo-user)
+* [Carousel of Videos](https://github.com/AlexArchibeque/Fwitch#carousel-of-videos)
 
 ## User Authentication
+
+Fwitch uses BCrypt for password salting and hashing in order to create a safe environment for storing passwords on the backend, as well as keeping users information safe and easily accessible.
+
+### Login
+Ability to log in with an account already signed up and saved to the backend.
+    !(https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/login-page.png "Log-in Modal")
+### Signup
+Ability to sign up and have data saved persistently to the back end.
+    https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/signup-page.png
+### Demo User
+Ability to demo the site without creating an account.
+    https://media3.giphy.com/media/Lp7bRlmH7Ye89wRkAh/giphy.gif
+
+    https://media3.giphy.com/media/bqMJe1UO5etGSseCV6/giphy.gif
+
+## Carousel Of Videos
+
+https://media0.giphy.com/media/DYn4a1bzfqU1R4Jfrf/giphy.gif
