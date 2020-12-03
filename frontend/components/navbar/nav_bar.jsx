@@ -6,6 +6,7 @@ import React from 'react';
 import SignUpContainer from '../session/signup_container';
 import LoginContainer from '../session/login_container';
 import DemoContainer from '../session/demo_container';
+import SearchBarContainer from '../searchbar/searchbar_container';
 
 import DropDownContainer from '../dropdown/dropdown_container';
 
@@ -111,8 +112,10 @@ class NavBar extends React.Component {
                 <div className="nav-bar-btn-container">
                     <button className="demo-btn hover-button click-button cursor-pointer" 
                     onClick={() =>this.showForm('demoUser')}>Demo</button>
-                    <button className="login-btn cursor-pointer" onClick={() => this.showForm('showLogin')}>Log In</button>
-                    <button className="signup-btn hover-button click-button cursor-pointer" onClick={() => this.showForm('showSignup')}>Sign Up</button>
+                    <button className="login-btn cursor-pointer" 
+                    onClick={() => this.showForm('showLogin')}>Log In</button>
+                    <button className="signup-btn hover-button click-button cursor-pointer" 
+                    onClick={() => this.showForm('showSignup')}>Sign Up</button>
                 </div>
             </>
         )
@@ -121,7 +124,6 @@ class NavBar extends React.Component {
         let errors = this.state.errors.length > 0 ? 
         (
         <div className="modal-error-container">
-
             <div className="modal-error-message-container">
                 {this.props.errors.map((err,idx) => { 
                     return(
@@ -129,7 +131,6 @@ class NavBar extends React.Component {
                     )
                 })}
             </div>
-
         </div>) : 
         (
         <div></div>
@@ -145,6 +146,10 @@ class NavBar extends React.Component {
                         <a href="#/about" className="tw-text hover-text click-text">About</a>
                     </div>
                 </div>
+
+                
+                < SearchBarContainer />
+
                 {display}            
             </nav>
             

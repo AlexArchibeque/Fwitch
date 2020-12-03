@@ -20,3 +20,11 @@ export const deleteSession = () => {
         method: 'DELETE'
     })
 }
+
+export const searchBarSearch = (searchData) => {
+    return $.ajax({
+        url: '/api/session',
+        method: 'POST',
+        data: { searchData }
+    })
+}
