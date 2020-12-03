@@ -1,3 +1,11 @@
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
 /* Errors */
 .modal-error-container {
     width: 90%;

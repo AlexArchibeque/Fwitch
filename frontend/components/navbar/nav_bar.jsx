@@ -60,7 +60,12 @@ class NavBar extends React.Component {
     }
 
     handleReset() {
-        this.setState({show:false, signup: '', login: '', errors: [] })
+        this.setState({ 
+            show:false, 
+            signup: '', 
+            login: '', 
+            errors: [] 
+        })
     }
 
     handleTabs(type) {
@@ -130,25 +135,6 @@ class NavBar extends React.Component {
         <div></div>
         )
 
-        // Regular Nav-bar without Modal 
-         
-        if(!this.state.show ){
-            return(
-                <nav className="nav-bar">
-                    <div className="left-nav-bar-container">
-                        <a href="#/" className="cursor-pointer"><img className="flex fwitch-logo" src={window.Fwitchlogo}/></a>
-                    <div className="linked-text-container">
-                        <a href="#/directory" className="tw-text hover-text click-text">Browse</a>
-                        <a href="#/about" className="tw-text hover-text click-text">About</a>
-                    </div>
-
-                    </div>
-                    {display}
-                </nav>
-            )
-        }
-
-        // Modal Nav-Bar
         return(   
             <>
             <nav className="nav-bar">
@@ -162,9 +148,8 @@ class NavBar extends React.Component {
                 {display}            
             </nav>
             
-                <div className="modal-screen"
-                    onClick={this.handleReset}
-                    >
+            <div className={this.state.show ? "show" : "hidden" }>
+                <div className="modal-screen" onClick={this.handleReset} >
                     <div className="modal-wrapper">
                         <div className="modal-content"
                             onClick={e=> e.stopPropagation() 
@@ -192,6 +177,7 @@ class NavBar extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </>
         ) 
     }   
