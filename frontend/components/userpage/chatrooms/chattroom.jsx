@@ -18,7 +18,7 @@ class ChatRoom extends React.Component {
                         <div>
                         </div>
 
-                        <button className="chatroom-chat-button hover-button">Chat</button>
+                        <button className="chatroom-chat-button hover-button cursor-pointer">Chat</button>
                     </div>
                 </form>
             </div>
