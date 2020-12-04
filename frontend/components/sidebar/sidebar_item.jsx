@@ -7,12 +7,8 @@ class SideBarItem extends React.Component {
         super(props)
         this.props = props;
 
-        this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick(){
-
-    }
 
     render(){
         const chan = this.props.channel;

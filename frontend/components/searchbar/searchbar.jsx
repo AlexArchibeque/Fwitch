@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SearchBarItem from './searchbar_item'
+import UserItem from './searchbar_user_item'
 import CategoryItem from './category_item'
 
 class SearchBar extends React.Component {
@@ -14,20 +14,38 @@ class SearchBar extends React.Component {
         }
         this.props = props;
         this.handleInput = this.handleInput.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
-    handleInput(input) {
+    handleInput(input, test) {
+        
+        if(test === "test"){
+            this.props.updateSearch('')
+                .then((results) => {
+                    this.setState({
+                        [input]: '',
+                        users: results[0],
+                        categories: results[1]
+                    })
+                })
+        }else{
+
         return(e) =>{
             let searchValue = e.currentTarget.value
             this.props.updateSearch(searchValue)
-                .then((results) => {
-            this.setState({
-                [input]: searchValue,
-                users: results[0],
+            .then((results) => {
+                this.setState({
+                    [input]: searchValue,
+                    users: results[0],
                 categories: results[1]
             })
             })
         }
+        }
+    }
+
+    handleClick() {
+        this.handleInput("search", "test")
     }
 
     render(){
@@ -39,22 +57,27 @@ class SearchBar extends React.Component {
         }
         return(
             <div className="searchbar-container">
-                <input type="text" onChange={this.handleInput("search")} value={this.state.searchValue}/>
+                <input type="text" 
+                onChange={this.handleInput("search")} 
+                value={this.state.search} 
+                placeholder="Search"
+                className="searchbar-input"
+                />
 
                 <ul className={`searchbar-dropdown ${ searchDropDown ? "" : "hidden"}`}>
 
                     {this.state.users.map(user => {
                         return(
-                            <SearchBarItem user={user} key={user.id}/>
+                            <UserItem channel={user} key={user.id} handleClick={this.handleClick}/>
                         )
                     })}
 
                     {this.state.categories.map(category => {
                         return(
-                            <CategoryItem category={category} key={category.id} />
+                            <CategoryItem category={category} key={category.id} handleClick={this.handleClick}/>
                         )
                     })}
-                    
+
                 </ul>
                 
             </div>

@@ -6,15 +6,20 @@ class Api::SessionsController < ApplicationController
             users = []
             categories = []
             if searchData != ''   
-                User.all.each do |user|
-                    if user.username.downcase.include?(searchData)
-                        users.push(user)
+                Channel.all.each do |channel|
+                    if channel.user.username.downcase.include?(searchData)
+                        json = channel.as_json
+                        json["username"] = channel.user.username
+                        json["pictureUrl"] = url_for(channel.channel_pic)
+                        users.push(json)
                     end
                 end
 
                 Category.all.each do |category|
                     if category.title.downcase.include?(searchData)
-                        categories.push(category)
+                        json = category.as_json
+                        json["pictureUrl"] = url_for(category.photo)
+                        categories.push(json)
                     end
                 end
             end

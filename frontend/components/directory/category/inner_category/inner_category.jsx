@@ -7,7 +7,8 @@ class InnerCategory extends React.Component {
         super(props)
         this.props = props
         this.state = {
-            done:false
+            done:false,
+            loaded: false
         }
 
         this.catProm = this.catProm.bind(this)
@@ -18,7 +19,16 @@ class InnerCategory extends React.Component {
             this.catProm()
         }
     }
+
+    componentDidUpdate(prevProps){
+        let urlArr = decodeURI(window.location.hash).split("/");
+        let urlId = urlArr[urlArr.length-1];
+        
+        this.props.categoryClips(urlId)
+        
+    }
     
+
     catProm(){ 
         return new Promise(() => this.props.categoriesList()).then(this.setState({done: true})) 
     }
