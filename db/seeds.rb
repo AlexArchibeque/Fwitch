@@ -63,14 +63,13 @@ superMetroid.photo.attach(io: file6, filename: 'Super_Metroid.jpg' )
 # Area to add Channels
 Channel.destroy_all
 
-
 demoUserChan = Channel.create!(name: demoUser.username.downcase, description: 'DemoDescription' , owner_id: demoUser.id, category_id: justChatting.id)
 defaultPic1 = open("https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/F-Logo.png")
-demoUserChan.channel_pic.attach(io:defaultPic1, filename:'default.png')
+demoUserChan.channel_pic.attach(io:defaultPic1, filename:'defaultlogo.png')
 
 timmyChan = Channel.create!(name: timmy.username.downcase, owner_id: timmy.id, category_id: justChatting.id)
 defaultPic2 = open("https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/F-Logo.png")
-timmyChan.channel_pic.attach(io:defaultPic2, filename:'default.png')
+timmyChan.channel_pic.attach(io:defaultPic2, filename:'defaultlogo2.png')
 
 xqcChan = Channel.create!(name: xqc.username.downcase, description: 'Among Us High Level Gameplay' , owner_id: xqc.id, category_id: amongUs.id)
 channelPic3 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/xqc+Logo.jpeg')

@@ -5,7 +5,8 @@ class Api::SessionsController < ApplicationController
             searchData = params[:searchData]
             users = []
             categories = []
-            if searchData != ''   
+            if searchData != '' 
+                  
                 Channel.all.each do |channel|
                     if channel.user.username.downcase.include?(searchData)
                         json = channel.as_json
