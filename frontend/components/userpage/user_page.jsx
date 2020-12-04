@@ -62,20 +62,17 @@ class UserPage extends React.Component {
 
 
                         <div className="right-user-page-current-stream-info">
-                            <button>
-                                Follow / Unfollow
+                            <button className="follow-unfollow-button hover-button click-button">
+                                Follow
                             </button>
                         </div>
+
                     </div>
 
                     <div className="user-page-streamer-info">
-                        <div>
-                            <p>Videos</p>
-                            <p>Followers</p>
-                            <p>Follows</p>
-                        </div>
-
-
+                        <p>Videos</p>
+                        <p>Followers</p>
+                        <p>Follows</p>
                     </div>
                     
                 </div>

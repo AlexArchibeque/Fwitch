@@ -1,85 +1,3 @@
-.outermost-div-for-user-page{
-    overflow-y: scroll;
-}
-
-
-.user-page-video{
-    width:  100%;
-    height: auto;
-}
-
-.user-page-current-stream-info{
-    width: 100%;
-    height: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.user-page-left-container{
-    width: calc(100% - 340px);
-    overflow-y: scroll;
-    display:flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-/* Left Side */
-
-.user-page-image{
-    width: 70px;
-    height: 70px;
-    border: 2px solid #9147ff;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-
-.left-user-page-current-stream-info{
-    display:flex;
-    width: 60%
-}
-
-.right-user-page-current-stream-info{
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    /* flex-direction: flex-end; */
-    width: 40%;
-}
-
-.left-user-page-current-stream-paras{
-    display:flex;
-    flex-direction: column ; 
-}   
-
-.user-page-username,
-.user-page-channel-description,
-.user-page-category{
-    margin-left: 5px;
-}
-
-.user-page-username{
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.user-page-channel-description{
-    margin-top: 5px;
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.user-page-category {
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.user-page-category:hover{
-    color: #9147ff
-}
-
 /* Chatroom */
 
 .bottom-bottom-of-chatroom{
@@ -111,6 +29,7 @@
     color: whitesmoke;
     border-radius: 5px;
     padding: 5px;
+    font-size: 14px;
     height: 28px;
 }
 
