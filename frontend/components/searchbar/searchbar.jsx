@@ -18,8 +18,8 @@ class SearchBar extends React.Component {
     }
 
     handleInput(input, test) {
-        
-        if(test === "test"){
+
+        if(test === "clicked"){
             this.props.updateSearch('')
                 .then((results) => {
                     this.setState({
@@ -45,7 +45,7 @@ class SearchBar extends React.Component {
     }
 
     handleClick() {
-        this.handleInput("search", "test")
+        this.handleInput("search", "clicked")
     }
 
     render(){
