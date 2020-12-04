@@ -18,6 +18,11 @@
     padding: 5px;
 }
 
+.searchbar-input:hover{
+    transition: ease-in-out 0.5s;
+    border: 2px solid lightgrey;
+}
+
 .searchbar-input:focus {
     /* border-radius: 5px; */
     border: 2px solid #a570ff;
