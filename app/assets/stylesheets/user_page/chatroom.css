@@ -67,7 +67,8 @@
 }   
 
 .user-page-username,
-.user-page-channel-description{
+.user-page-channel-description,
+.user-page-category{
     margin-left: 5px;
 }
 
@@ -80,4 +81,13 @@
     margin-top: 5px;
     font-size: 22px;
     font-weight: 500;
+}
+
+.user-page-category {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.user-page-category:hover{
+    color: #9147ff
 }

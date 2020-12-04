@@ -54,7 +54,9 @@ class UserPage extends React.Component {
                             <div className="left-user-page-current-stream-paras">
                                 <p className="user-page-username"> {channel.username} </p>
                                 <p className="user-page-channel-description"> {channel.description} </p>
-                                <a href={`#/directory/${channel.category.title}`}>{channel.category.title}</a>
+                                <a href={`#/directory/${channel.category.title}`}
+                                className="user-page-category"
+                                >{channel.category.title}</a>
                             </div>
                         </div>
 

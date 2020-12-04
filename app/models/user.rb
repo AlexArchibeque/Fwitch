@@ -59,4 +59,10 @@ class User < ApplicationRecord
     has_one :channel,
         foreign_key: :owner_id
 
+    has_many :follows
+
+    has_many :followed_channels,
+        through: :follows,
+        source: :channel
+
 end

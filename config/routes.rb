@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :show] do
       resources :clips, only: [ :index ]
     end
+    resources :follows, only: [:create,:destroy,:show]
     resources :clips, only: [:index, :show]
     resource :session, only: [:create, :destroy]
   end

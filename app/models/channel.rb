@@ -35,4 +35,11 @@ class Channel < ApplicationRecord
     belongs_to :category,
         foreign_key: :category_id
 
+
+    has_many :follows
+
+    has_many :followers,
+        through: :follows,
+        source: :user
+
 end
