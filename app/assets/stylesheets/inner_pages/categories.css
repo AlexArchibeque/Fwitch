@@ -8,7 +8,6 @@
 /* Category Items */
 
 .category-item {
-
     display: flex;
     flex-direction: column;
     width: 18rem;
@@ -16,15 +15,20 @@
     padding: 10px;
     width: 200px;
     height:360px;
-
 }
+
 .category-item > a > img {
     cursor: pointer;
     max-width: 100%;
     height: auto;
 }
 
-.category-item-text:hover {
+.category-item-text-top {
+    margin-top: 10px;
+}
+
+.category-item-text:hover,
+.category-item-text-top:hover {
     color: #9147FF;
     cursor: default;
 }

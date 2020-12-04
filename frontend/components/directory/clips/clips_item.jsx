@@ -15,7 +15,7 @@ class ClipItem extends React.Component {
                     type="video/mp4" 
                     className="video-container-stuff stream__thumbnail"/>
                 </a>
-                <p>{video.description}</p>
+                <p className="category-item-text-top">{video.description}</p>
             </div>
         )
     }
