@@ -5,15 +5,16 @@
     overflow-x: hidden;
     background-color: #1f1f23;
     /* height: calc(100vh - 48px); */
-    font-size: 16px;
-    font-weight: 600;
     height: 100vh;
+    font-weight: 600;
     min-width:250px;
     max-width: 250px;
 }
 
 .sidebar-container > p {
     height: 32px;
+    font-size: 14px;
+    color: whitesmoke;
     width: 100%;
     padding-top: 10px;
     padding-left: 10px;

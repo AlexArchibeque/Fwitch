@@ -19,7 +19,7 @@ class Sidebar extends React.Component {
 
         return(
             <div className='sidebar-container'>
-                <p>Recommended Channels</p>
+                <p>RECOMMENDED CHANNELS</p>
                 {recommendedChannels}
             </div>
         )
