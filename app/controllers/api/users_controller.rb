@@ -23,7 +23,8 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by()
+        @channel = Channel.find_by(name: params[:id])
+        render 'api/channels/show'
     end
 
     def destroy

@@ -26,7 +26,7 @@ class MainPageCenter extends React.Component {
                     <Route path="/directory" component={ DirectoryContainer } />
                     <Route path="/videos/:id" component={ ClipPage } />
                     <Route path="/about" component={ About } />
-                    <Route exact path="/:user" component={ UserStreamPage} />
+                    <Route exact path="/:user" component={ UserStreamPage } />
                     <Route exact path="/" component={ Home } />
                     <Route component={NoPageComponent} />
                 </Switch>

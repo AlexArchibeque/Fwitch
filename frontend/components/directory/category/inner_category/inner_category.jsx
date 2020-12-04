@@ -25,7 +25,6 @@ class InnerCategory extends React.Component {
         let urlId = urlArr[urlArr.length-1];
         
         this.props.categoryClips(urlId)
-        
     }
     
 
