@@ -1,5 +1,7 @@
 import React from 'react'
+
 import SideBarItem from './sidebar_item'
+import FollowedContainer from './followed-section/followed_container'
 
 class Sidebar extends React.Component {
 
@@ -19,6 +21,7 @@ class Sidebar extends React.Component {
 
         return(
             <div className='sidebar-container'>
+                <FollowedContainer />
                 <p>RECOMMENDED CHANNELS</p>
                 {recommendedChannels}
             </div>
