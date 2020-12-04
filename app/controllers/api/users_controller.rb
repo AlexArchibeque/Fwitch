@@ -1,3 +1,4 @@
+require 'open-uri'
 class Api::UsersController < ApplicationController
 
     def index 
@@ -11,7 +12,9 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             defaultCategory = Category.find_by(title:"Just Chatting")
-            Channel.create!(name:@user.username, owner_id: @user.id, category_id: defaultCategory.id)
+            defaultPic = open("https://fwitch-seeds.s3-us-west-1.amazonaws.com/ChannelPics/F-Logo.png")
+            chan = Channel.create!(name:@user.username, owner_id: @user.id, category_id: defaultCategory.id)
+            chan.channel_pic.attach(io: defaultPic, filename:'default.png')
             login!(@user)
             render :show
         else
