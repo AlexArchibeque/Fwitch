@@ -1,13 +1,17 @@
 class Api::FollowsController < ApplicationController
 
+    def show
+        @user = current_user
+        render '/api/users/show'
+    end
 
     def create
         @follow = Follow.new(follow_params)
-
+        @user = current_user
         if @follow.save
-            render json: ["Successfully followed!"], status 200
+            render '/api/users/show'
         else
-            rend json: @follow.errors.full_messages, status: 422
+            render json: @follow.errors.full_messages, status: 422
         end
     end
 
@@ -15,14 +19,10 @@ class Api::FollowsController < ApplicationController
         @follow = Follow.where(user_id: current_user.id, channel_id: params[:id])
         if @follow
             Follow.destroy(@follow.id)
-            render json: ["Successfully Destoryed!"], status 200
+            render '/api/users/show'
         else
             render json: ["Don't know what happened"]
         end
-    end
-
-    def show
-
     end
 
     def follow_params

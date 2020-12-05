@@ -11,13 +11,14 @@ class UserPage extends React.Component {
         }
     }
 
+
     componentDidMount(){
         let split = window.document.URL.split('/')
         let username = split[split.length - 1]
-
         this.props.getUser(username)
     }
 
+    // Gets user when switching between channels
     componentDidUpdate(prevProps,prevState,snapshot){
         let urlArr = decodeURI(window.location.hash).split("/");
         let urlId = urlArr[urlArr.length-1];
@@ -33,8 +34,17 @@ class UserPage extends React.Component {
     }
 
     render(){
-        const {channel} = this.props;
+        const {channel, currentUser} = this.props;
+        let followButton;
         if(!channel){ return null }
+        // for(let i = 0 ; i < Object.values(currentUser.followed_channels).length ; i ++ ){
+        //     Object.values(currentUser.followed_channels)[i]
+        // }
+        // <button  
+        // onClick={this.handleFollow} 
+        // className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`}>
+        //     Follow
+        // </button>
         return(
             <div className="outermost-div-for-user-page">
 
@@ -62,9 +72,7 @@ class UserPage extends React.Component {
 
 
                         <div className="right-user-page-current-stream-info">
-                            <button className="follow-unfollow-button hover-button click-button cursor-pointer">
-                                Follow
-                            </button>
+                            {followButton}
                         </div>
 
                     </div>

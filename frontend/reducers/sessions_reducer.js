@@ -1,4 +1,5 @@
 import {RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER} from '../actions/session';
+import {RECEIVE_FOLLOW, REMOVE_FOLLOW} from '../actions/follows'
 
 const _nullSession = {
     currentUser: null,
@@ -12,6 +13,10 @@ const sessionReducer = (state=_nullSession, action) => {
             return Object.assign( {}, { currentUser: action.user })
         case LOGOUT_CURRENT_USER:
             return _nullSession;
+        case RECEIVE_FOLLOW:
+            return Object.assign( {}, { currentUser: action.follow})
+        case REMOVE_FOLLOW:
+            return Object.assign( {}, { currentUser: action.follow})
         default:
             return state;
     }
