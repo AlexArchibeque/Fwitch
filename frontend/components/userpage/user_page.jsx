@@ -99,9 +99,8 @@ class UserPage extends React.Component {
                     </div>
 
                     <div className="user-page-streamer-info">
+                        <p>Home</p>
                         <p>Videos</p>
-                        <p>Followers</p>
-                        <p>Follows</p>
                     </div>
                     
                 </div>

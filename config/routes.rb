@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :clips, only: [:index, :show]
     resource :session, only: [:create, :destroy]
   end
-  
+
+  mount ActionCable.server, at: '/cable'
 end
