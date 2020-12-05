@@ -6,12 +6,18 @@ class Followed extends React.Component {
 
 
     render(){
+        let followedChannels = this.props.followedChannels ? 
+            this.props.followedChannels.map(channel => {
+                return(
+                    <FollowedItem key={channel.id} channel={channel} user={this.props.currentUser}/>
+                )
+            })
 
+        : ''
         return(
-            <h1>
-                <FollowedItem />
-                Followed container
-            </h1>
+            <ul>
+                {followedChannels}
+            </ul>
         ) 
     }
 }

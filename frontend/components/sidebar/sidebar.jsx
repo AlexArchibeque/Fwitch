@@ -10,18 +10,24 @@ class Sidebar extends React.Component {
     }
 
     render(){
-        const {channels} = this.props;
+        const {channels, currentUser} = this.props;
+        
         let recommendedChannels = Object.entries(channels).length > 0 ? 
         Object.values(channels).slice(2,7).map(channel => {
             return(
-                <SideBarItem key={channel.id} channel={channel}/>
-            )
-        })
-        : <div></div>
+                <SideBarItem 
+                key={channel.id} 
+                channel={channel} />
+                )
+            })
+            : <div></div>
+
+        let followedChannels = currentUser ? <FollowedContainer /> :''
 
         return(
             <div className='sidebar-container'>
-                <FollowedContainer />
+                <p className={`${ currentUser ? 'show-flex': 'hidden'}`}>FOLLOWED CHANNELS</p>
+                { followedChannels }
                 <p>RECOMMENDED CHANNELS</p>
                 {recommendedChannels}
             </div>

@@ -5,7 +5,8 @@ import {allChannels} from '../../actions/channels'
 
 const mSTP = state => {
     return({
-        channels: state.entities.channels
+        channels: state.entities.channels,
+        currentUser: state.session.currentUser
     })
 }
 

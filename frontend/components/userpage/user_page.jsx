@@ -51,13 +51,16 @@ class UserPage extends React.Component {
 
         let followed = false;
         if(!channel){ return null }
-        currentUser.followed_channels.length > 0 ?  
-            currentUser.followed_channels.forEach( channel => {
-                if(channel.name === urlId){
-                    followed = true;
-                }
-            })
-        : ''
+
+        if(currentUser){
+            currentUser.followed_channels.length > 0 ?  
+                currentUser.followed_channels.forEach( channel => {
+                    if(channel.name === urlId){
+                        followed = true;
+                    }
+                })
+            : ''
+        }
 
         followed ? 
         followButton = <button onClick={() => this.handleFollow("unfollow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`} > UnFollow </button>
