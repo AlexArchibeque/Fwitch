@@ -1,9 +1,9 @@
-export const postFollow = (channelId) => {
+export const postFollow = (follow) => {
 
     return $.ajax({
         method: "POST",
         url: "/api/follows",
-        data: {channelId}
+        data: {follow}
     })
 
 }

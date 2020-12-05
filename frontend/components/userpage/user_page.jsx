@@ -9,8 +9,17 @@ class UserPage extends React.Component {
         this.state = {
             updated: false
         }
+
+        this.handleFollow = this.handleFollow.bind(this)
     }
 
+    handleFollow(type){
+        if(type === "follow"){
+            this.props.followChannel({"channel_id": this.props.channel.id, "user_id": this.props.currentUser.id})
+        } else if (type === "unfollow"){
+            this.props.unfollowChannel(this.props.channel.id)
+        }
+    }
 
     componentDidMount(){
         let split = window.document.URL.split('/')
@@ -35,16 +44,25 @@ class UserPage extends React.Component {
 
     render(){
         const {channel, currentUser} = this.props;
+
         let followButton;
+        let urlArr = decodeURI(window.location.hash).split("/");
+        let urlId = urlArr[urlArr.length-1];
+
+        let followed = false;
         if(!channel){ return null }
-        // for(let i = 0 ; i < Object.values(currentUser.followed_channels).length ; i ++ ){
-        //     Object.values(currentUser.followed_channels)[i]
-        // }
-        // <button  
-        // onClick={this.handleFollow} 
-        // className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`}>
-        //     Follow
-        // </button>
+        currentUser.followed_channels.length > 0 ?  
+            currentUser.followed_channels.forEach( channel => {
+                if(channel.name === urlId){
+                    followed = true;
+                }
+            })
+        : ''
+
+        followed ? 
+        followButton = <button onClick={() => this.handleFollow("unfollow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`} > UnFollow </button>
+        : followButton = <button  onClick={() => this.handleFollow("follow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`}> Follow </button>
+        
         return(
             <div className="outermost-div-for-user-page">
 

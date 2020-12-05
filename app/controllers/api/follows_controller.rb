@@ -17,8 +17,9 @@ class Api::FollowsController < ApplicationController
 
     def destroy
         @follow = Follow.where(user_id: current_user.id, channel_id: params[:id])
+        @user = current_user
         if @follow
-            Follow.destroy(@follow.id)
+            Follow.destroy(@follow[0].id)
             render '/api/users/show'
         else
             render json: ["Don't know what happened"]
