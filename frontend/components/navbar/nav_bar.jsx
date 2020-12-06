@@ -112,7 +112,9 @@ class NavBar extends React.Component {
                 <div className="nav-bar-btn-container">
                     <button className="demo-btn hover-button click-button cursor-pointer" 
                     onClick={() =>this.showForm('demoUser')}>Demo</button>
-                    <button className="login-btn cursor-pointer" 
+                    <button 
+                    id="login-btn"
+                    className="login-btn cursor-pointer" 
                     onClick={() => this.showForm('showLogin')}>Log In</button>
                     <button className="signup-btn hover-button click-button cursor-pointer" 
                     onClick={() => this.showForm('showSignup')}>Sign Up</button>

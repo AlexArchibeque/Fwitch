@@ -8,6 +8,7 @@ class ChatRoom extends React.Component {
 
         this.state = {
             body: '',
+            
         }
 
         this.handleSubmitMessage = this.handleSubmitMessage.bind(this)
@@ -20,6 +21,7 @@ class ChatRoom extends React.Component {
     }
 
     handleSubmitMessage(){
+        if(this.props.user){
         return(e) =>{
             e.preventDefault()
             App.cable.subscriptions.subscriptions[1].sendMessage(
@@ -31,6 +33,10 @@ class ChatRoom extends React.Component {
                 }
                 )
             this.setState({body: ''})
+        }}else{
+            return() => {
+                document.getElementById('login-btn').click()
+            }
         }
     }
 

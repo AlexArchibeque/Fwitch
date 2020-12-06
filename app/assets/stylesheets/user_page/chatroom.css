@@ -96,6 +96,7 @@
     flex-wrap: wrap;
     margin-top: 5px;
     min-height: 20px;
+    padding: 5px;
     line-height: 1.2;
 }
 .message-in-chat-room:hover {
