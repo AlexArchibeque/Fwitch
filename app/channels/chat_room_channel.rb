@@ -1,5 +1,6 @@
 class ChatRoomChannel < ApplicationCable::Channel
   def subscribed
+    # Not the same as stream_from
     stream_for "chat_room_channel_#{params[:id]}"
   end
 

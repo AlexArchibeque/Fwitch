@@ -20,15 +20,18 @@ class ChatRoom extends React.Component {
     }
 
     handleSubmitMessage(){
-        App.cable.subscriptions.subscriptions[1].sendMessage(
-            { 
-                message: this.state.body, 
-                user_id: this.props.user.id,
-                channelName: this.props.match.params.user
-            
-            }
-            )
-        this.setState({body: ''})
+        return(e) =>{
+            e.preventDefault()
+            App.cable.subscriptions.subscriptions[1].sendMessage(
+                { 
+                    message: this.state.body, 
+                    user_id: this.props.user.id,
+                    channelName: this.props.match.params.user
+                
+                }
+                )
+            this.setState({body: ''})
+        }
     }
 
     render(){
@@ -51,7 +54,7 @@ class ChatRoom extends React.Component {
                         </div>
 
                         <button 
-                        onClick={() => this.handleSubmitMessage()}
+                        onClick={this.handleSubmitMessage()}
                         className="chatroom-chat-button hover-button cursor-pointer">Chat</button>
                     </div>
                 </form>

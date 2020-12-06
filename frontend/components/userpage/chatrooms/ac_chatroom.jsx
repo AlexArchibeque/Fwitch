@@ -56,14 +56,14 @@ class ACChatroom extends React.Component {
             let username = message[1];
             let body = message[0];
             return(
-                <li key={idx}>
-                    {`${message[0]}: ${message[1]}`}
+                <li key={idx} className="message-in-chat-room">
+                    <h1>{username}</h1>: <h2>{body}</h2>
                 </li>
             )
         })
         return (
             <div>
-                <ul>
+                <ul className="container-for-messages">
                     {messageList}
                 </ul>
             </div>
