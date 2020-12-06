@@ -1,7 +1,35 @@
 import React from 'react';
 
-class ChatRoom extends React.Component {
+import ActionCableChatroom from './ac_chatroom'
 
+class ChatRoom extends React.Component {
+    constructor(){
+        super()
+
+        this.state = {
+            body: '',
+        }
+
+        this.handleSubmitMessage = this.handleSubmitMessage.bind(this)
+    }
+
+    handleChange(){
+        return(e) => {
+            this.setState({body: e.currentTarget.value})
+        }
+    }
+
+    handleSubmitMessage(){
+        App.cable.subscriptions.subscriptions[1].sendMessage(
+            { 
+                message: this.state.body, 
+                user_id: this.props.user.id,
+                channelName: this.props.match.params.user
+            
+            }
+            )
+        this.setState({body: ''})
+    }
 
     render(){
         return(
@@ -9,16 +37,22 @@ class ChatRoom extends React.Component {
                 <div className="top-of-chatroom">STREAM CHAT</div>
 
                 <div className="middle-of-chatroom">
-                    Chatroom
+                    < ActionCableChatroom />
                 </div>
 
                 <form className="bottom-of-chatroom">
-                    <input className="chatroom-input" type="text" placeholder="Send a message"/>
+                    <input className="chatroom-input" type="text" placeholder="Send a message"
+                        onChange={this.handleChange()}
+                        value={this.state.body}
+                    />
                     <div className="bottom-bottom-of-chatroom">
+
                         <div>
                         </div>
 
-                        <button className="chatroom-chat-button hover-button cursor-pointer">Chat</button>
+                        <button 
+                        onClick={() => this.handleSubmitMessage()}
+                        className="chatroom-chat-button hover-button cursor-pointer">Chat</button>
                     </div>
                 </form>
             </div>

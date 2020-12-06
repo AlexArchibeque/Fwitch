@@ -52,7 +52,7 @@ class UserPage extends React.Component {
         let followed = false;
         if(!channel){ return null }
 
-        if(currentUser){
+        if(currentUser.followed_channels){
             currentUser.followed_channels.length > 0 ?  
                 currentUser.followed_channels.forEach( channel => {
                     if(channel.name === urlId){
