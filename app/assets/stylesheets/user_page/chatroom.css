@@ -69,10 +69,11 @@
 }
 
 .middle-of-chatroom{
+    overflow-y: scroll;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    min-width: 340px;
+    max-width: 340px;
 }
 
 .bottom-of-chatroom{
@@ -81,3 +82,33 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.container-for-messages {
+    width: 100%;
+    overflow-y: scroll;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.message-in-chat-room {
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    min-height: 20px;
+    line-height: 1.2;
+}
+.message-in-chat-room:hover {
+    background-color: #26262c;
+    border-radius: 5px
+}
+
+.text-in-chat{
+    font-size: 16px;
+}
+
+.username-chat{
+    color: maroon;
+    font-weight: 600;
+}
+
