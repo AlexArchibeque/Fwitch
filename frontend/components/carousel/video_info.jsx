@@ -12,7 +12,13 @@ class VideoInfo extends React.Component {
         const {video, channels, categories} = this.props;
         let channelsLoaded = Object.entries(channels).length > 0 ? true : false
         let categoriesLoaded = Object.entries(categories).length > 0 ? true : false 
-        if(video === false || video === 0) {
+        if(video === "No Clips found"){
+            return(
+                <div className="video-info-box-false">
+                </div>
+            )
+        }else{
+        if(video === false || video === 0 ) {
             return(
                 <div className="video-info-box-false">
                 </div>
@@ -44,7 +50,7 @@ class VideoInfo extends React.Component {
                 </div>
             )
         }
-    }
+    }}
 }
 
 const mSTP = state => {

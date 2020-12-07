@@ -13,21 +13,20 @@ class DropDown extends React.Component {
     }
 
     showDropDown() {
-
         this.setState({show: !this.state.show })
-    }
-
+    } 
 
     render(){
+        const {currentUser} = this.props
         let dropdownItemContainer = this.state.show ? 
         <DropdownItemContainer 
             logout={this.props.logout} 
-            currentUser={this.props.currentUser}
+            currentUser={currentUser}
             /> : 
         <div></div>
         return (
             <a onClick={this.showDropDown} className="dropdown-main">
-                <img src={window.Flogo} className="cursor-pointer"/>
+                <img src={currentUser.channelPhotoUrl} className="cursor-pointer dropdown-image"/>
                 {dropdownItemContainer}
             </a>
         )
