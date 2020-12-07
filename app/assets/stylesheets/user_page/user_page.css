@@ -109,3 +109,8 @@
 .user-page-category:hover{
     color: #9147ff
 }
+
+.ul-container-for-clips-user-page{
+    display: flex;
+    flex-wrap: wrap;
+}

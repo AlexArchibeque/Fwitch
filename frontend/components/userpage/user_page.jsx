@@ -1,6 +1,8 @@
 import React from 'react'
 
 import ChatRoom from './chatrooms/chatroom_container'
+import ClipItem from '../directory/clips/clips_item'
+import NoClipsContainer from './no_clips_container'
 
 class UserPage extends React.Component {
 
@@ -10,6 +12,8 @@ class UserPage extends React.Component {
             updated: false,
             show: 'home'
         }
+
+        this.show = "home"
 
         this.handleFollow = this.handleFollow.bind(this)
     }
@@ -26,6 +30,7 @@ class UserPage extends React.Component {
         this.setState({
             show: type
         })
+        this.show = type
     }
 
     componentDidMount(){
@@ -42,6 +47,8 @@ class UserPage extends React.Component {
         if(this.props.channel != undefined){
             if(this.props.channel.name !== urlId){
                 this.props.getUser(urlId)
+                this.props.userClips(urlId)
+                this.show = "home"
             }
         }
     }
@@ -51,18 +58,26 @@ class UserPage extends React.Component {
     }
 
     render(){
-        const {channel, currentUser, clipsArr} = this.props;
+        const {channel, currentUser, clips} = this.props;
 
         let followButton;
         let urlArr = decodeURI(window.location.hash).split("/");
         let urlId = urlArr[urlArr.length-1];
         let followed = false;
+        let clipsContainer;
 
-        // let clipsContainer = clipsArr ?
-        //  clipsArr.map( clip =>{
+        if(clips.includes("No Clips found")){
+            clipsContainer = < NoClipsContainer />
+        }else{
+            clipsContainer = clips ?
+            clips.map( clip =>{
+                return(
+                    <ClipItem key={clip.id} video={clip}/>
+                )
+            })
+            : ''
+        }
 
-        //  })
-        // :
 
         if(!channel){ return null }
         if(currentUser){
@@ -79,11 +94,20 @@ class UserPage extends React.Component {
         followed ? 
         followButton = <button onClick={() => this.handleFollow("unfollow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`} > UnFollow </button>
         : followButton = <button  onClick={() => this.handleFollow("follow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`}> Follow </button>
-        if(this.state.show === 'home'){
+        if(this.state.show === 'home' || this.show === "home"){
         return(
             <div className="outermost-div-for-user-page">
-
                 <div className="user-page-left-container">
+
+                    <div className="directory-tabs-container-user-page ">
+                        <a 
+                        className = {`${this.show === "home" ? "tab-selected-directory": ""} categories-link-other cursor-pointer`}
+                        onClick={() => this.handleShow("home")}>Home</a>
+                        <a 
+                        className = {`${this.show === 'videos' ? "tab-selected-directory": ""} categories-link-start cursor-pointer`}
+                        onClick={() => this.handleShow("videos")}>Videos</a>
+                    </div>
+
                     <div className="user-page-stream-container">
                         <video controls className="user-page-video">
                             <source src="" type="video/mp4" />
@@ -105,18 +129,11 @@ class UserPage extends React.Component {
                             </div>
                         </div>
 
-
                         <div className="right-user-page-current-stream-info">
                             {followButton}
                         </div>
 
                     </div>
-
-                    <div className="user-page-streamer-info">
-                        <p onClick={() => this.handleShow("home")}>Home</p>
-                        <p onClick={() => this.handleShow("videos")}>Videos</p>
-                    </div>
-                    
                 </div>
 
                 <ChatRoom />
@@ -127,12 +144,18 @@ class UserPage extends React.Component {
             return(
                 <div className="outermost-div-for-user-page">
                     <div className="user-page-left-container">
-                        {}
-
-                        <div className="user-page-streamer-info">
-                            <p onClick={() => this.handleShow("home")}>Home</p>
-                            <p onClick={() => this.handleShow("videos")}>Videos</p>
+                        <div className="directory-tabs-container-user-page ">
+                            <a 
+                            className = {`${this.show === "home" ? "tab-selected-directory": ""} categories-link-other cursor-pointer`}
+                            onClick={() => this.handleShow("home")}>Home</a>
+                            <a 
+                            className = {`${this.show === 'videos' ? "tab-selected-directory": ""} categories-link-start cursor-pointer`}
+                            onClick={() => this.handleShow("videos")}>Videos</a>
                         </div>
+                        <ul className="ul-container-for-clips-user-page">
+                            {clipsContainer}
+                        </ul>
+
                     </div>
                     <ChatRoom />
                 </div>

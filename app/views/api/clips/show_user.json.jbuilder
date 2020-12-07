@@ -5,6 +5,8 @@ if @all_clips.length > 1
             json.videoUrl url_for(clip.video)
         end
     end
+elsif @all_clips.length == 0
+    
 else
     clip = @all_clips[0]
     json.set! clip.id do 

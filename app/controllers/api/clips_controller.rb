@@ -8,7 +8,11 @@ class Api::ClipsController < ApplicationController
         elsif(params[:channel_id])
             @channel = Channel.find_by(name: params[:channel_id])
             @all_clips = Clip.where(channel_id: @channel.id)
+            if(@all_clips.length == 0)
+                render json: ["No Clips found"]
+            else
             render :show_user 
+            end
         else    
             @clips = Clip.all
             render :index
