@@ -1,4 +1,4 @@
-import {getCategoryClips, getAllClips, getClip} from '../util/clips'
+import {getCategoryClips, getAllClips, getClip, getChannelClips} from '../util/clips'
 
 export const RECEIVE_CLIPS = 'RECEIVE_CLIPS';
 export const CLEAR_CLIPS = 'CLEAR_CLIPS';
@@ -16,6 +16,8 @@ export const clearClips = () => {
     })
 }
 
+export const userClips = channelName => dispatch => getChannelClips(channelName)
+    .then(clips => dispatch(receiveClips(clips)))
 
 export const categoryClips = category => dispatch => getCategoryClips(category)
     .then(clips =>  dispatch(receiveClips(clips)))

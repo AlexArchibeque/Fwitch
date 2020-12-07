@@ -7,7 +7,8 @@ class UserPage extends React.Component {
     constructor(){
         super()
         this.state = {
-            updated: false
+            updated: false,
+            show: 'home'
         }
 
         this.handleFollow = this.handleFollow.bind(this)
@@ -21,10 +22,17 @@ class UserPage extends React.Component {
         }
     }
 
+    handleShow(type){
+        this.setState({
+            show: type
+        })
+    }
+
     componentDidMount(){
         let split = window.document.URL.split('/')
         let username = split[split.length - 1]
         this.props.getUser(username)
+        this.props.userClips(username)
     }
 
     // Gets user when switching between channels
@@ -43,13 +51,19 @@ class UserPage extends React.Component {
     }
 
     render(){
-        const {channel, currentUser} = this.props;
+        const {channel, currentUser, clipsArr} = this.props;
 
         let followButton;
         let urlArr = decodeURI(window.location.hash).split("/");
         let urlId = urlArr[urlArr.length-1];
-
         let followed = false;
+
+        // let clipsContainer = clipsArr ?
+        //  clipsArr.map( clip =>{
+
+        //  })
+        // :
+
         if(!channel){ return null }
         if(currentUser){
         if(currentUser.followed_channels){
@@ -65,7 +79,7 @@ class UserPage extends React.Component {
         followed ? 
         followButton = <button onClick={() => this.handleFollow("unfollow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`} > UnFollow </button>
         : followButton = <button  onClick={() => this.handleFollow("follow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`}> Follow </button>
-        
+        if(this.state.show === 'home'){
         return(
             <div className="outermost-div-for-user-page">
 
@@ -99,8 +113,8 @@ class UserPage extends React.Component {
                     </div>
 
                     <div className="user-page-streamer-info">
-                        <p>Home</p>
-                        <p>Videos</p>
+                        <p onClick={() => this.handleShow("home")}>Home</p>
+                        <p onClick={() => this.handleShow("videos")}>Videos</p>
                     </div>
                     
                 </div>
@@ -108,7 +122,22 @@ class UserPage extends React.Component {
                 <ChatRoom />
             
             </div>
-        )
+        )}
+        else{
+            return(
+                <div className="outermost-div-for-user-page">
+                    <div className="user-page-left-container">
+                        {}
+
+                        <div className="user-page-streamer-info">
+                            <p onClick={() => this.handleShow("home")}>Home</p>
+                            <p onClick={() => this.handleShow("videos")}>Videos</p>
+                        </div>
+                    </div>
+                    <ChatRoom />
+                </div>
+            )
+        }
     }
 }
 

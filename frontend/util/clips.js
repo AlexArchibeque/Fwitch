@@ -5,6 +5,13 @@ export const getCategoryClips = (category) => {
     })
 }
 
+export const getChannelClips = (channelName) => {
+    return $.ajax({
+        url: `/api/channels/${channelName}/clips`,
+        method: "GET"
+    })
+}
+
 export const getAllClips = () => {
     return $.ajax ({
         url: `/api/clips`,

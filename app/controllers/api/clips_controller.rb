@@ -1,15 +1,18 @@
 class Api::ClipsController < ApplicationController
 
-    def index      
+    def index     
         if(params[:category_id]) 
             @category = Category.find_by(title: params[:category_id])
             @all_clips = Clip.where(category_id: @category.id)
             render :show_category
-        else  
+        elsif(params[:channel_id])
+            @channel = Channel.find_by(name: params[:channel_id])
+            @all_clips = Clip.where(channel_id: @channel.id)
+            render :show_user 
+        else    
             @clips = Clip.all
             render :index
         end
-
     end
 
     def show   
