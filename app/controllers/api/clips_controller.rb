@@ -1,7 +1,6 @@
 class Api::ClipsController < ApplicationController
 
     def create
-        debugger
         category = Category.find_by(title: params[:category])
         channel = Channel.find_by(name: current_user.username.downcase)
         @clip = Clip.new(description: params[:description],
