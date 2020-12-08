@@ -33,13 +33,113 @@
     border-radius: 5px;
 }
 
-
-/* Video Preview */
-.video-preview-div > h1 {
-    
+.video-container-settings{
+    min-height: 250px;
 }
 
+.current-picture-div,
+.image-preview-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.image-preview-div{
+    margin-left: 80px;
+}
+
+.current-picture-div > img,
+.image-preview-div > img{
+    width: 100px;
+    height: 100px;
+}
+
+
+.form-for-video-upload,
+.form-for-image-upload{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form-for-video-upload >h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.user-settings-submit-button {
+    background-color: #3a3a3d;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+    color: white;
+}
+
+.user-settings-submit-button:hover{
+    background-color: #454548;
+}
+
+.input-for-image,
+.input-for-video{
+    display:none;
+}
+
+.custom-input-settings{
+    width: 95%;
+    height: 30px;
+}
+
+
+/* Video Preview */
+.video-preview-div{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 80px;
+}
+.video-preview-div > h1,
+.current-picture-div > h1,
+.image-preview-div> h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+}    
+
 .video-preview-div > video{
-    width: 300px;
+    width: 350px;
     height: auto;
+    margin-top: 20px;
+}
+
+.input-for-video{
+    outline: none;
+    border: none;
+}
+
+.form-for-video-upload > select {
+    height: 30px;
+    color: whitesmoke;
+    background-color: #3a3a3d;
+    border-radius: 5px;
+}
+
+.form-for-video-upload > select > option {
+    color: whitesmoke;
+    background-color: #3a3a3d;
+}
+
+
+/* image Preview */
+
+.image-preview-div{
+
 }

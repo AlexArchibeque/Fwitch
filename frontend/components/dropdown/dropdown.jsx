@@ -22,6 +22,7 @@ class DropDown extends React.Component {
         <DropdownItemContainer 
             logout={this.props.logout} 
             currentUser={currentUser}
+            showDropDown={this.showDropDown}
             /> : 
         <div></div>
         return (
