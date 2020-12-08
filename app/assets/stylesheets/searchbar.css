@@ -34,7 +34,7 @@
     display: flex;
     width: inherit;
     align-items: center;
-    z-index: 10;
+    z-index: 15;
     flex-direction: column;
     background-color: #18181b;
     border-radius: 5px;

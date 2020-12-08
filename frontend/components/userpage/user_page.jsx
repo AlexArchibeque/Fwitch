@@ -4,6 +4,8 @@ import ChatRoom from './chatrooms/chatroom_container'
 import ClipItem from '../directory/clips/clips_item'
 import NoClipsContainer from './no_clips_container'
 
+import VideoUploadContainer from './video_upload'
+
 class UserPage extends React.Component {
 
     constructor(){
@@ -81,19 +83,28 @@ class UserPage extends React.Component {
 
         if(!channel){ return null }
         if(currentUser){
-        if(currentUser.followed_channels){
-            currentUser.followed_channels.length > 0 ?  
-                currentUser.followed_channels.forEach( channel => {
-                    if(channel.name === urlId){
-                        followed = true;
-                    }
-                })
-            : ''
-        }}
+            if(currentUser.followed_channels){
+                currentUser.followed_channels.length > 0 ?  
+                    currentUser.followed_channels.forEach( channel => {
+                        if(channel.name === urlId){
+                            followed = true;
+                        }
+                    })
+                : ''
+            }
+        }
 
         followed ? 
         followButton = <button onClick={() => this.handleFollow("unfollow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`} > UnFollow </button>
         : followButton = <button  onClick={() => this.handleFollow("follow")} className={`follow-unfollow-button hover-button click-button cursor-pointer ${currentUser ? "show" : "hidden"}`}> Follow </button>
+        let videoUpload;
+        if(currentUser){
+            if(currentUser.username.toLowerCase() === urlId){
+                followButton = ''
+                videoUpload = <VideoUploadContainer />
+            }
+        }
+
         if(this.state.show === 'home' || this.show === "home"){
         return(
             <div className="outermost-div-for-user-page">
@@ -155,6 +166,10 @@ class UserPage extends React.Component {
                         <ul className="ul-container-for-clips-user-page">
                             {clipsContainer}
                         </ul>
+
+                        <div>
+                            {videoUpload}
+                        </div>
 
                     </div>
                     <ChatRoom />
