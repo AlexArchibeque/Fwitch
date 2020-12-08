@@ -1,4 +1,5 @@
-import {getCategoryClips, getAllClips, getClip, getChannelClips} from '../util/clips'
+import {getCategoryClips, getAllClips,
+     getClip, getChannelClips, postUserClip} from '../util/clips'
 
 export const RECEIVE_CLIPS = 'RECEIVE_CLIPS';
 export const CLEAR_CLIPS = 'CLEAR_CLIPS';
@@ -15,6 +16,16 @@ export const clearClips = () => {
         type: CLEAR_CLIPS
     })
 }
+
+export const uploadedClip = (userInfo) => {
+    return({
+        type: 'RECEIVE_USER_INFO',
+        userInfo
+    })
+}
+
+export const createClip = videoInfo => dispatch => postUserClip(videoInfo)
+    .then(userInfo => dispatch(uploadedClip(userInfo)))
 
 export const userClips = channelName => dispatch => getChannelClips(channelName)
     .then(clips => dispatch(receiveClips(clips)))

@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import Settings from './settings';
 import { patchUserImage } from '../../actions/users'
+import { createClip } from '../../actions/clips'
 
 const mSTP = state => {
     return({
@@ -10,7 +11,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return({
-        patchUserImage: (userId, image) => dispatch(patchUserImage(userId,image))
+        patchUserImage: (userId, image) => dispatch(patchUserImage(userId,image)),
+        uploadVideo: (videoInfo) => dispatch(createClip(videoInfo))
     })
 }
 

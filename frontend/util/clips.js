@@ -25,3 +25,13 @@ export const getClip = (clipId) => {
         method: 'GET'
     })
 }
+
+export const postUserClip = (videoInfo) => {
+    return $.ajax({
+        url:`/api/clips`,
+        method: 'POST',
+        data: videoInfo,
+        contentType: false,
+        processData: false
+    })
+}

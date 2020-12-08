@@ -1,5 +1,20 @@
 class Api::ClipsController < ApplicationController
 
+    def create
+        debugger
+        category = Category.find_by(title: params[:category])
+        channel = Channel.find_by(name: current_user.username.downcase)
+        @clip = Clip.new(description: params[:description],
+        video: params[:video], category_id: category.id,
+        channel_id: channel.id)
+
+        if @clip.save!
+            render 'api/users/show'
+        else
+            render @clip.errors.full_messages, status: 401
+        end
+    end
+
     def index     
         if(params[:category_id]) 
             @category = Category.find_by(title: params[:category_id])

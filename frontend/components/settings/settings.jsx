@@ -51,10 +51,12 @@ class SettingsPage extends React.Component{
                 let Image = new FormData(e.target)
                 this.props.patchUserImage(this.props.currentUser.id, Image)
             }else if(type === "video"){
-                let Category = e.target.category.value
-                let vidDescription = this.state.vidDescription
-                let videoObject = this.state.video
-
+                let formData = new FormData(e.target)
+                formData.append('category',e.target.category.value)
+                formData.append('description', this.state.vidDescription)
+                formData.append('video', this.state.video)
+                
+                this.props.uploadVideo(formData)
             }
         }
     }

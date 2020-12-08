@@ -28,7 +28,6 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-        debugger
         @user = User.find(params[:id])
         @channel = Channel.find_by(name: @user.username.downcase)
         if @channel.update(channel_pic: params['photo'])
