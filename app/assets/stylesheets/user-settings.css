@@ -32,3 +32,14 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+
+/* Video Preview */
+.video-preview-div > h1 {
+    
+}
+
+.video-preview-div > video{
+    width: 300px;
+    height: auto;
+}

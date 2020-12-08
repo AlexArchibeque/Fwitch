@@ -118,17 +118,17 @@ xqc_1.video.attach(io: clip2, filename:'instant_death.mp4')
 
 # Prod Seeding
 
-# moonmoon_1 = Clip.create!( description:"Solid Snake CQC", category_id: grandTheftAutoFive.id, channel_id:moonmoonChan.id)
-# clip3 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/MoonMoon-GTA5+Snake.mp4')
-# moonmoon_1.video.attach(io: clip3, filename:'solid_snake.mp4')
+moonmoon_1 = Clip.create!( description:"Solid Snake CQC", category_id: grandTheftAutoFive.id, channel_id:moonmoonChan.id)
+clip3 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/MoonMoon-GTA5+Snake.mp4')
+moonmoon_1.video.attach(io: clip3, filename:'solid_snake.mp4')
 
-# riot_games_1 = Clip.create!( description:"Ult From Where?", category_id: leagueOfLegends.id, channel_id:riotgamesChan.id)
-# clip4 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/LoL+-+Jhin.mp4')
-# riot_games_1.video.attach(io: clip4, filename:'JhinUlt.mp4')
+riot_games_1 = Clip.create!( description:"Ult From Where?", category_id: leagueOfLegends.id, channel_id:riotgamesChan.id)
+clip4 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/LoL+-+Jhin.mp4')
+riot_games_1.video.attach(io: clip4, filename:'JhinUlt.mp4')
 
-# forsen_1 = Clip.create!( description:"Death in 3", category_id: mineCraft.id, channel_id:forsenChan.id)
-# clip5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Forsen-InstDeath-MineCraft.mp4')
-# forsen_1.video.attach(io: clip5, filename:'LavaHurts.mp4')
+forsen_1 = Clip.create!( description:"Death in 3", category_id: mineCraft.id, channel_id:forsenChan.id)
+clip5 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Forsen-InstDeath-MineCraft.mp4')
+forsen_1.video.attach(io: clip5, filename:'LavaHurts.mp4')
 
 charles_1 = Clip.create!( description:"Catapillars", category_id: superMetroid.id, channel_id: smcharlesChan.id)
 clip6 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Charles-Catipillars.mp4')

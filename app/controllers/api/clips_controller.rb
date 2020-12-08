@@ -9,6 +9,7 @@ class Api::ClipsController < ApplicationController
         channel_id: channel.id)
 
         if @clip.save!
+            @user = current_user
             render 'api/users/show'
         else
             render @clip.errors.full_messages, status: 401

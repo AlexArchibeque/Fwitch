@@ -15,16 +15,16 @@ class DropDownItemContainer extends React.Component {
                 <div className="a-link-div-container-dropdown">
                 <a href={`#/${currentUser.channel.name}`} className="dropdown-a-link cursor-pointer">
                     
-                    <img src={window.video} className="dropdown-image-icon"/>Channel
+                    <img src={window.video} className="dropdown-image-icon"/> <p>Channel</p>
                 </a>
 
                 <a href="#/settings" className="dropdown-a-link cursor-pointer"> 
-                    <img src={window.settings} className="dropdown-image-icon"/> Settings
+                    <img src={window.settings} className="dropdown-image-icon"/> <p>Dashboard</p>
                 </a>
                 </div>
 
                 <button onClick={this.props.logout} className="dropdown-btn cursor-pointer">
-                    <img src={window.signOut} className="dropdown-image-icon"/> Logout
+                    <img src={window.signOut} className="dropdown-image-icon"/> <p>Logout</p>
                 </button>
             </nav>
         )

@@ -67,7 +67,7 @@
 
 /* Dropdown items */
 .dropdown-item-image{
-    width: 50px;
+    width: 30%;
     height: 50px;
     border-radius: 50px;
     margin-right: 10px;
@@ -76,7 +76,7 @@
 .dropdown-a-link{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-weight: 600;
     font-size: 18px;
 
@@ -90,6 +90,17 @@
     height: 35px;
     margin-top: 5px;
     background-color: #18181b;
+}
+.dropdown-a-link > p,
+.dropdown-btn > p {
+    display:flex;
+    align-items: center;
+    width: 80%;
+
+}
+
+.dropdown-a-link >img {
+    padding-left: 6px;
 }
 
 .a-link-div-container-dropdown{

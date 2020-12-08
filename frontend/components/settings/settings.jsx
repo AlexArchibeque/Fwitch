@@ -50,6 +50,12 @@ class SettingsPage extends React.Component{
             if(type === "image"){
                 let Image = new FormData(e.target)
                 this.props.patchUserImage(this.props.currentUser.id, Image)
+                    .then( (res) => {
+                        this.setState({
+                            imgRef: '',
+                            img: ''
+                        })
+                    })
             }else if(type === "video"){
                 let formData = new FormData(e.target)
                 formData.append('category',e.target.category.value)
@@ -57,6 +63,13 @@ class SettingsPage extends React.Component{
                 formData.append('video', this.state.video)
                 
                 this.props.uploadVideo(formData)
+                    .then( (res) => {
+                        this.setState({
+                            videoRef: '',
+                            vidDescription: '',
+                            video: '',
+                        })
+                    })
             }
         }
     }
@@ -83,7 +96,7 @@ class SettingsPage extends React.Component{
                 <div className="video-container-settings">
 
                     <form onSubmit={this.handleSubmit("video")}>
-                        <input type="file" name="video" onChange={this.videoSelectHandler.bind(this)} />
+                        <input type="file" name="video" onChange={this.videoSelectHandler.bind(this)}/>
                         <input type="text" onChange={this.handleChange("vidDescription")} value={this.state.vidDescription}/>
                         <select name="category">
                             {this.state.categories.map(category => {
@@ -96,7 +109,10 @@ class SettingsPage extends React.Component{
                     </form>
 
                     {/* Video Preview */}
-                    <video src={this.state.videoRef} controls className={`${this.state.videoRef === ''? 'hidden' : 'show' }`} />
+                    <div className={`${this.state.videoRef === ''? 'hidden' : 'show' } video-preview-div`}>
+                        <h1>Video Preview!</h1>
+                        <video src={this.state.videoRef} controls />
+                    </div>
                 </div>
 
             </div>
