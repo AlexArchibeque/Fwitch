@@ -6,12 +6,12 @@ Rails.application.routes.draw do
     resources :channels, only: [:show, :index] do
         resources :clips, only: [ :index ]
     end
-    resources :users, only: [:create, :destroy, :show, :index]
+    resources :users, only: [:create, :destroy, :show, :index, :update]
     resources :categories, only: [:index, :show] do
       resources :clips, only: [ :index ]
     end
     resources :follows, only: [:create,:destroy,:show]
-    resources :clips, only: [:index, :show]
+    resources :clips, only: [:index, :show, :create]
     resource :session, only: [:create, :destroy]
   end
 

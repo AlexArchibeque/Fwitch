@@ -1,0 +1,34 @@
+.outer-div-settings{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.image-container-settings,
+.video-container-settings,
+.outer-div-settings > h1{
+    margin-left: 30px
+}
+
+.outer-div-settings > h1:first-child{
+    line-height: 1.3;
+    border-bottom: 1px solid #2e2e31;
+}
+
+.outer-div-settings > h1 {
+    font-size: 40px;
+    font-size: 700;
+    color: #d7d5dd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.image-container-settings,
+.video-container-settings{
+    display: flex;
+    min-height: 150px;
+    width: 60%;
+    background-color: #18181b;
+    border: 1px solid #2e2e31;
+    padding: 10px;
+    border-radius: 5px;
+}

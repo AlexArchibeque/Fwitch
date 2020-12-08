@@ -11,3 +11,14 @@ export const retrieveUsers = () => {
         method: 'GET'
     })
 }
+
+export const updateUserImage = (userId,image) => {
+    return $.ajax({
+        url:`/api/users/${userId}`,
+        method: 'PATCH',
+        data: image,
+        contentType: false,
+        processData: false
+    })
+}
+

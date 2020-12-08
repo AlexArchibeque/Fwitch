@@ -14,6 +14,9 @@ import ClipPage from '../directory/clips/clip_page'
 
 import UserStreamPage from '../userpage/user_page_container'
 
+import SettingsPage from '../settings/settings_container'
+import { AuthRoute, ProtectedRoute } from '../../util/route_utils'
+
 
 class MainPageCenter extends React.Component {
 
@@ -22,6 +25,7 @@ class MainPageCenter extends React.Component {
             <div className="inner-main-page-container">
                 <Route exact path="/directory/clips" component={ClipsPageContainer}/>
                 <Switch>
+                    <ProtectedRoute exact path="/settings" component={ SettingsPage } />
                     <Route path="/directory/:category" component={InnerCategoryContainer}/>
                     <Route path="/directory" component={ DirectoryContainer } />
                     <Route path="/videos/:id" component={ ClipPage } />

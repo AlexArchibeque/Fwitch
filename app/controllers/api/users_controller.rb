@@ -27,6 +27,17 @@ class Api::UsersController < ApplicationController
         render 'api/channels/show'
     end
 
+    def update
+        debugger
+        @user = User.find(params[:id])
+        @channel = Channel.find_by(name: @user.username.downcase)
+        if @channel.update(channel_pic: params['photo'])
+            render 'api/users/show'
+        else
+            render @channel.errors.full_messages, status: 402
+        end
+    end
+
     def destroy
         # Soon to be destroy user/Delete account
 
