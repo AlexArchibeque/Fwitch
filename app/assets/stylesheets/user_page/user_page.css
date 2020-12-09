@@ -1,5 +1,6 @@
 .outermost-div-for-user-page{
     overflow-y: scroll;
+    height: 100vh;
 }
 
 .user-page-video{
@@ -20,7 +21,7 @@
     overflow-y: scroll;
     display:flex;
     flex-direction: column;
-    height: 100vh;
+    height: calc(100% + 500px);
 }
 
 .follow-unfollow-button {

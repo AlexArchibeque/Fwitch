@@ -167,9 +167,9 @@ class UserPage extends React.Component {
                             {clipsContainer}
                         </ul>
 
-                        <div>
-                            {videoUpload}
-                        </div>
+
+                        {videoUpload}
+
 
                     </div>
                     <ChatRoom />

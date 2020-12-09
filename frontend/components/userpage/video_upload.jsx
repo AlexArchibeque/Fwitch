@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import { createClip } from '../../actions/clips'
+import { createClip, userClips } from '../../actions/clips'
 
 class VideoUpload extends React.Component {
 
@@ -45,6 +45,8 @@ class VideoUpload extends React.Component {
     }
 
     handleSubmit(){
+        let urlArr = decodeURI(window.location.hash).split("/");
+        let urlId = urlArr[urlArr.length-1];
 
         return(e) => {
             e.preventDefault()
@@ -66,6 +68,7 @@ class VideoUpload extends React.Component {
                         disabledButton: false,
                         fileUploading: "File Uploaded!"
                     })
+                    this.props.userClips(urlId)
                 })
         }
     }
@@ -113,7 +116,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return({
-        uploadVideo: (videoInfo) => dispatch(createClip(videoInfo))
+        uploadVideo: (videoInfo) => dispatch(createClip(videoInfo)),
+        userClips: (channelName) => dispatch(userClips(channelName))
     })
 }
 
