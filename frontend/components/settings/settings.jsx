@@ -14,6 +14,7 @@ class SettingsPage extends React.Component{
             video: '',
 
             imgErr: [],
+            fileUploading: '',
 
             categories:["Among Us", "Dungeons and Dragons", "Grand Theft Auto Five",
             "Just Chatting", "League Of Legends", "Mine Craft", "Super Metroid"]
@@ -65,6 +66,10 @@ class SettingsPage extends React.Component{
                 }
             }else if(type === "video"){
                 let formData = new FormData(e.target)
+                this.setState({
+                    disabledButton: true,
+                    fileUploading: 'File upload working.'
+                })
                 formData.append('category',e.target.category.value)
                 formData.append('description', this.state.vidDescription)
                 formData.append('video', this.state.video)
@@ -75,6 +80,8 @@ class SettingsPage extends React.Component{
                             videoRef: '',
                             vidDescription: '',
                             video: '',
+                            disabledButton: true,
+                            fileUploading: "File Uploaded!"
                         })
                     })
             }
@@ -113,6 +120,7 @@ class SettingsPage extends React.Component{
 
 
                 <h1>Clips</h1>
+                        
                 <div className="video-container-settings">
 
                     <form onSubmit={this.handleSubmit("video")} className="form-for-video-upload">
@@ -131,13 +139,14 @@ class SettingsPage extends React.Component{
                                 )
                             })}
                         </select>
-                        <input type="submit" className="user-settings-submit-button cursor-pointer" />
+                        <input type="submit" className={`${this.state.disabledButton ? "disabled-button": ''} user-settings-submit-button cursor-pointer`} disabled={this.state.disabledButton} />
                     </form>
 
                     {/* Video Preview */}
                     <div className={`${this.state.videoRef === ''? 'hidden' : 'show' } video-preview-div`}>
                         <h1>Video Preview!</h1>
                         <video src={this.state.videoRef} controls />
+                        <h1>{this.state.fileUploading}</h1>
                     </div>
                 </div>
 

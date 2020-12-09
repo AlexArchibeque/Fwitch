@@ -84,6 +84,11 @@
     color: white;
 }
 
+.disabled-button {
+    cursor: wait;
+    opacity: .7;
+}
+
 .user-settings-submit-button:hover{
     background-color: #454548;
 }

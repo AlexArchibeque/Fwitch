@@ -48,6 +48,9 @@ class ACChatroom extends React.Component {
 
             }
             )
+            this.setState({
+                messages: [],
+            })
         }
       }
 
