@@ -8,6 +8,13 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('F-Logo.png') %>
+
+    <meta name="title" property="og:title" content="Fwitch" />
+    <meta property='og:type' content="Website"/>
+    <meta name="image" property='og:image' content="<%= image_url('fwitch_pic.png') %>"/>
+    <meta name="description" property="og:description" content="Full stack React/Redux and rails clone of Twitch.tv. Made with PostgreSQL and good programming practices." />
+    <meta name="author" content="Alex Archibeque" />
+
     <% if current_user %>
       <script>
       window.currentUser = {
@@ -16,14 +23,6 @@
           "email": "<%= current_user['email'] %>"
         };
       </script>
-
-
-      <meta name="title" property="og:title" content="Fwitch" />
-      <meta property='og:type' content="Website"/>
-      <meta name="image" property='og:image' content="<%= image_url('fwitch_pic.png') %>"/>
-      <meta name="description" property="og:description" content="Full stack React/Redux and rails clone of Twitch.tv. Made with PostgreSQL and good programming practices." />
-      <meta property="og:url" content="https://fwitch.herokuapp.com/#/" />
-      <meta name="author" content="Alex Archibeque" />
     <% end %>
     
     <script type="text/javascript">
