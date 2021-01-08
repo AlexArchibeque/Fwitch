@@ -131,7 +131,3 @@ The css behind the JS
     }
 ```
 
-## Uploading Videos
-    TBD
-## Uploading Channel Images
-    TBD
