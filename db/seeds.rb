@@ -108,9 +108,9 @@ Clip.destroy_all
 # Clips
 
 # Dev Seeding
-arcadum_1 = Clip.create!( description:"Frustrated Arcadum", category_id: dungeonsAndDragons.id, channel_id: arcadumChan.id)
-clip1 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Arcadum-DND.mp4')
-arcadum_1.video.attach(io: clip1, filename:'FireballFun.mp4')
+# arcadum_1 = Clip.create!( description:"Frustrated Arcadum", category_id: dungeonsAndDragons.id, channel_id: arcadumChan.id)
+# clip1 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/Arcadum-DND.mp4')
+# arcadum_1.video.attach(io: clip1, filename:'FireballFun.mp4')
 
 xqc_1 = Clip.create!( description:"Instant KO" , category_id: amongUs.id, channel_id: xqcChan.id)
 clip2 = open('https://fwitch-seeds.s3-us-west-1.amazonaws.com/Clips/xQC-AmongUs.mp4')
